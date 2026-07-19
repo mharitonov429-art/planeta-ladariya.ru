@@ -1,0 +1,74 @@
+{
+  "robots": [
+    {
+      "id": "unitree-g1",
+      "name": "Unitree G1",
+      "category": "гуманоиды",
+      "price": "от 3 700 000 ₽",
+      "icon": "🦾",
+      "description": "Гуманоид для образования, R&D и сервиса. 23 степени свободы.",
+      "specs": {
+        "weight": "35 кг",
+        "battery": "до 2 часов",
+        "payload": "2 кг на руку",
+        "sdk": "Python, C++"
+      }
+    },
+    {
+      "id": "unitree-go2",
+      "name": "Unitree Go2",
+      "category": "роботы-собаки",
+      "price": "от 1 200 000 ₽",
+      "icon": "🐕",
+      "description": "Бионическая собака для сервиса, охраны и образования.",
+      "specs": {
+        "weight": "15 кг",
+        "battery": "до 3 часов",
+        "payload": "5 кг",
+        "sdk": "Python, ROS"
+      }
+    },
+    {
+      "id": "promobot-v4",
+      "name": "Promobot V.4",
+      "category": "сервисные",
+      "price": "от 2 500 000 ₽",
+      "icon": "🤖",
+      "description": "Сервисный робот-консультант для магазинов, банков, выставок.",
+      "specs": {
+        "weight": "45 кг",
+        "battery": "до 8 часов",
+        "screen": "10.1 дюйма",
+        "sdk": "JavaScript, Python"
+      }
+    },
+    {
+      "id": "booster-k1",
+      "name": "Booster Robotics K1",
+      "category": "гуманоиды",
+      "price": "от 4 200 000 ₽",
+      "icon": "🧑‍💻",
+      "description": "Китайский гуманоид для промышленности и логистики.",
+      "specs": {
+        "weight": "42 кг",
+        "battery": "до 4 часов",
+        "payload": "5 кг на руку",
+        "sdk": "C++, ROS"
+      }
+    },
+    {
+      "id": "robovie-r3",
+      "name": "Robovie R3",
+      "category": "сервисные",
+      "price": "от 1 800 000 ₽",
+      "icon": "🗣️",
+      "description": "Робот-консьерж для гостиниц и офисов.",
+      "specs": {
+        "weight": "30 кг",
+        "battery": "до 6 часов",
+        "screen": "8 дюймов",
+        "sdk": "Python"
+      }
+    }
+  ]
+}
