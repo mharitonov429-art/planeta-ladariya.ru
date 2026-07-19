@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог роботов — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА (копируем с index.html)                         -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html" class="active">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  ЗАГОЛОВОК СТРАНИЦЫ                                   -->
+    <!-- ====================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Каталог роботов</h1>
+            <p class="page-subtitle">Выберите робота для вашего бизнеса. Фильтруйте по категориям, сравнивайте цены и характеристики.</p>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФИЛЬТРЫ КАТАЛОГА                                     -->
+    <!-- ====================================================== -->
+    <section class="catalog-filters">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label">📂 Категория:</span>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-category="all">Все</button>
+                        <button class="filter-btn" data-category="гуманоиды">🤖 Гуманоиды</button>
+                        <button class="filter-btn" data-category="роботы-собаки">🐕 Роботы-собаки</button>
+                        <button class="filter-btn" data-category="сервисные">🛎️ Сервисные</button>
+                        <button class="filter-btn" data-category="образовательные">🎓 Образовательные</button>
+                        <button class="filter-btn" data-category="логистические">📦 Логистические</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">💰 Цена:</span>
+                    <div class="filter-buttons" id="priceFilters">
+                        <button class="filter-btn active" data-price="all">Все</button>
+                        <button class="filter-btn" data-price="budget">до 1 млн</button>
+                        <button class="filter-btn" data-price="medium">1-3 млн</button>
+                        <button class="filter-btn" data-price="premium">от 3 млн</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  СЕТКА РОБОТОВ                                        -->
+    <!-- ====================================================== -->
+    <section class="catalog-grid">
+        <div class="container">
+            <div class="catalog-stats">
+                <span id="robotCount">Загрузка...</span>
+            </div>
+            <div class="robots-grid" id="robotList">
+                <!-- Роботы загружаются из JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР (копируем с index.html)                         -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <!-- ====================================================== -->
+    <!--  СПЕЦИАЛЬНЫЙ СКРИПТ ДЛЯ СТРАНИЦЫ КАТАЛОГА             -->
+    <!-- ====================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Переменные ---
+            let allRobots = [];
+            let currentCategory = 'all';
+            let currentPrice = 'all';
+
+            // --- Элементы DOM ---
+            const robotList = document.getElementById('robotList');
+            const robotCount = document.getElementById('robotCount');
+            const filterButtons = document.querySelectorAll('#filterButtons .filter-btn');
+            const priceButtons = document.querySelectorAll('#priceFilters .filter-btn');
+
+            // --- Функция загрузки роботов ---
+            async function loadRobots() {
+                try {
+                    const response = await fetch('data/robots.json');
+                    if (!response.ok) throw new Error('Ошибка загрузки');
+                    const data = await response.json();
+                    allRobots = data.robots || [];
+                    renderRobots(allRobots);
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    robotList.innerHTML = `
+                        <div class="empty-state">
+                            <p>😕 Не удалось загрузить каталог</p>
+                            <p style="color:#94A3B8;font-size:14px;">Проверьте файл data/robots.json</p>
+                        </div>
+                    `;
+                    robotCount.textContent = '0 роботов';
+                }
+            }
+
+            // --- Функция рендеринга ---
+            function renderRobots(robots) {
+                if (!robots || robots.length === 0) {
+                    robotList.innerHTML = `
+                        <div class="empty-state">
+                            <p>😕 Роботов не найдено</p>
+                            <p style="color:#94A3B8;font-size:14px;">Попробуйте изменить фильтры</p>
+                        </div>
+                    `;
+                    robotCount.textContent = '0 роботов';
+                    return;
+                }
+
+                robotList.innerHTML = robots.map(robot => `
+                    <div class="robot-card" data-id="${robot.id}">
+                        <div class="robot-image">${robot.icon || '🤖'}</div>
+                        <h4>${robot.name}</h4>
+                        <p class="robot-price">${robot.price || 'Цена по запросу'}</p>
+                        <p class="robot-desc">${robot.description || ''}</p>
+                        <div class="robot-tags">
+                            ${robot.category ? `<span class="tag">${robot.category}</span>` : ''}
+                        </div>
+                        <a href="robot-detail.html?id=${robot.id}" class="btn btn-small">Подробнее →</a>
+                    </div>
+                `).join('');
+
+                robotCount.textContent = `${robots.length} роботов`;
+            }
+
+            // --- Функция фильтрации ---
+            function filterRobots() {
+                let filtered = allRobots;
+
+                // Фильтр по категории
+                if (currentCategory !== 'all') {
+                    filtered = filtered.filter(r => r.category === currentCategory);
+                }
+
+                // Фильтр по цене
+                if (currentPrice !== 'all') {
+                    filtered = filtered.filter(r => {
+                        const price = r.price ? parseInt(r.price.replace(/[^0-9]/g, '')) : 0;
+                        if (currentPrice === 'budget') return price < 1000000;
+                        if (currentPrice === 'medium') return price >= 1000000 && price <= 3000000;
+                        if (currentPrice === 'premium') return price > 3000000;
+                        return true;
+                    });
+                }
+
+                renderRobots(filtered);
+            }
+
+            // --- Обработчики фильтров ---
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    filterRobots();
+                });
+            });
+
+            priceButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    priceButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentPrice = this.dataset.price;
+                    filterRobots();
+                });
+            });
+
+            // --- Запуск ---
+            loadRobots();
+
+            // --- Мобильное меню ---
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
