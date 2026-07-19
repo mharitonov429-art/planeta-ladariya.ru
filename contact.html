@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Контакты — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА                                                -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="active">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  ЗАГОЛОВОК СТРАНИЦЫ                                   -->
+    <!-- ====================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">📞 Контакты</h1>
+            <p class="page-subtitle">Свяжитесь с нами любым удобным способом — мы всегда на связи</p>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  КОНТАКТНАЯ ИНФОРМАЦИЯ                                -->
+    <!-- ====================================================== -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Телефон -->
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h4>Телефон</h4>
+                    <p><a href="tel:+79964049593">+7 (996) 404-95-93</a></p>
+                    <span class="contact-label">Пн-Пт: 9:00 — 20:00</span>
+                </div>
+
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h4>Email</h4>
+                    <p><a href="mailto:stroitel.yug@mail.ru">stroitel.yug@mail.ru</a></p>
+                    <span class="contact-label">Отвечаем в течение 24 часов</span>
+                </div>
+
+                <!-- Адрес -->
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h4>Адрес</h4>
+                    <p>г. Москва, ул. Тверская, д. 15</p>
+                    <span class="contact-label">Офис 307</span>
+                </div>
+
+                <!-- Соцсети -->
+                <div class="contact-card">
+                    <div class="contact-icon">🌐</div>
+                    <h4>Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-btn">Telegram</a>
+                        <a href="#" class="social-btn">VK</a>
+                        <a href="#" class="social-btn">YouTube</a>
+                    </div>
+                    <span class="contact-label">Подписывайтесь!</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФОРМА СВЯЗИ                                          -->
+    <!-- ====================================================== -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="form-content">
+                    <span class="section-tag">Напишите нам</span>
+                    <h2>Есть вопросы или нужна консультация?</h2>
+                    <p>
+                        Заполните форму, и мы свяжемся с вами в ближайшее время. 
+                        Поможем подобрать робота, рассчитать ROI или ответим на любые вопросы.
+                    </p>
+                </div>
+
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Ваше имя <span class="required">*</span></label>
+                            <input type="text" id="contactName" class="form-control" placeholder="Иван Иванов" required />
+                            <div class="error-message" id="nameError">Пожалуйста, укажите ваше имя</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="ivan@example.ru" required />
+                            <div class="error-message" id="emailError">Пожалуйста, укажите корректный email</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactPhone">Телефон</label>
+                        <input type="tel" id="contactPhone" class="form-control" placeholder="+7 (999) 123-45-67" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactSubject">Тема обращения <span class="required">*</span></label>
+                        <select id="contactSubject" class="form-control" required>
+                            <option value="">-- Выберите тему --</option>
+                            <option value="consultation">Консультация по выбору робота</option>
+                            <option value="roi">Расчет ROI</option>
+                            <option value="partnership">Сотрудничество</option>
+                            <option value="education">Образовательные проекты</option>
+                            <option value="support">Техническая поддержка</option>
+                            <option value="other">Другое</option>
+                        </select>
+                        <div class="error-message" id="subjectError">Пожалуйста, выберите тему обращения</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Сообщение <span class="required">*</span></label>
+                        <textarea id="contactMessage" class="form-control" rows="5" placeholder="Опишите вашу задачу или вопрос..." required></textarea>
+                        <div class="error-message" id="messageError">Пожалуйста, напишите сообщение</div>
+                    </div>
+
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="contactAgree" required />
+                        <label for="contactAgree">Я согласен на обработку персональных данных <span class="required">*</span></label>
+                        <div class="error-message" id="agreeError">Пожалуйста, подтвердите согласие</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-large" id="submitBtn">
+                        Отправить сообщение →
+                    </button>
+
+                    <div id="formSuccess" class="form-success" style="display:none;">
+                        <span class="success-icon">✅</span>
+                        <h4>Спасибо за обращение!</h4>
+                        <p>Мы свяжемся с вами в ближайшее время.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  КАРТА                                                -->
+    <!-- ====================================================== -->
+    <section class="contact-map">
+        <div class="container">
+            <div class="map-wrapper">
+                <h3>📍 Как нас найти</h3>
+                <div class="map-container">
+                    <!-- Яндекс.Карты (встраиваемый код) -->
+                    <iframe 
+                        src="https://yandex.ru/map-widget/v1/?um=constructor%3A1a2b3c4d5e6f7g8h9i0j&source=constructor" 
+                        width="100%" 
+                        height="450" 
+                        frameborder="0"
+                        allowfullscreen>
+                    </iframe>
+                    <p class="map-hint">г. Москва, ул. Тверская, д. 15, офис 307</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  FAQ (ЧАСТЫЕ ВОПРОСЫ)                                 -->
+    <!-- ====================================================== -->
+    <section class="contact-faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Частые вопросы</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>❓ Сколько времени занимает подбор робота?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Обычно подбор занимает 1-2 дня. Мы анализируем ваши задачи, бюджет и условия, после чего предлагаем 2-3 оптимальных варианта с расчетом окупаемости.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>❓ Предоставляете ли вы тестовый период?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, мы можем организовать пилотный проект на 2-4 недели. Это позволяет увидеть робота в реальных условиях и оценить его эффективность до покупки.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>❓ Какая гарантия на роботов?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Гарантия зависит от модели и составляет от 6 до 24 месяцев. Мы предоставляем полное сервисное обслуживание в Москве и регионах.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>❓ Есть ли обучение персонала?</span>
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Да, мы проводим обучение для ваших сотрудников: от базовой настройки до продвинутого программирования. Обучение входит в комплекс услуг по внедрению.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  CTA: БЫСТРЫЙ ЗВОНОК                                  -->
+    <!-- ====================================================== -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-wrapper">
+                <h2>📞 Хотите быструю консультацию?</h2>
+                <p>Позвоните нам прямо сейчас или оставьте заявку на обратный звонок</p>
+                <div class="cta-buttons">
+                    <a href="tel:+79964049593" class="btn btn-primary btn-large">Позвонить</a>
+                    <button class="btn btn-secondary btn-large" id="callbackBtn">Заказать звонок</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР                                                -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 stroitel.yug@mail.ru</p>
+                    <p>📞 +7 (996) 404-95-93</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ==================================================
+            // 1. МОБИЛЬНОЕ МЕНЮ
+            // ==================================================
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+
+            // ==================================================
+            // 2. ВАЛИДАЦИЯ ФОРМЫ
+            // ==================================================
+            const form = document.getElementById('contactForm');
+            const nameInput = document.getElementById('contactName');
+            const emailInput = document.getElementById('contactEmail');
+            const subjectInput = document.getElementById('contactSubject');
+            const messageInput = document.getElementById('contactMessage');
+            const agreeInput = document.getElementById('contactAgree');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('formSuccess');
+
+            // --- Функция валидации ---
+            function validateField(input, errorId) {
+                const error = document.getElementById(errorId);
+                if (input.validity.valid && input.value.trim() !== '') {
+                    input.style.borderColor = '#10B981';
+                    if (error) error.style.display = 'none';
+                    return true;
+                } else {
+                    input.style.borderColor = '#EF4444';
+                    if (error) error.style.display = 'block';
+                    return false;
+                }
+            }
+
+            // --- Валидация при вводе ---
+            nameInput.addEventListener('blur', function() {
+                validateField(this, 'nameError');
+            });
+            nameInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#10B981';
+                    document.getElementById('nameError').style.display = 'none';
+                }
+            });
+
+            emailInput.addEventListener('blur', function() {
+                validateField(this, 'emailError');
+            });
+            emailInput.addEventListener('input', function() {
+                if (this.validity.valid && this.value.trim() !== '') {
+                    this.style.borderColor = '#10B981';
+                    document.getElementById('emailError').style.display = 'none';
+                }
+            });
+
+            subjectInput.addEventListener('change', function() {
+                validateField(this, 'subjectError');
+            });
+
+            messageInput.addEventListener('blur', function() {
+                validateField(this, 'messageError');
+            });
+            messageInput.addEventListener('input', function() {
+                if (this.value.trim() !== '') {
+                    this.style.borderColor = '#10B981';
+                    document.getElementById('messageError').style.display = 'none';
+                }
+            });
+
+            agreeInput.addEventListener('change', function() {
+                if (this.checked) {
+                    this.style.outline = 'none';
+                    document.getElementById('agreeError').style.display = 'none';
+                }
+            });
+
+            // --- Отправка формы ---
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Проверяем все поля
+                const isNameValid = validateField(nameInput, 'nameError');
+                const isEmailValid = validateField(emailInput, 'emailError');
+                const isSubjectValid = validateField(subjectInput, 'subjectError');
+                const isMessageValid = validateField(messageInput, 'messageError');
+
+                let isAgreeValid = agreeInput.checked;
+                if (!isAgreeValid) {
+                    document.getElementById('agreeError').style.display = 'block';
+                    agreeInput.style.outline = '2px solid #EF4444';
+                } else {
+                    document.getElementById('agreeError').style.display = 'none';
+                    agreeInput.style.outline = 'none';
+                }
+
+                if (isNameValid && isEmailValid && isSubjectValid && isMessageValid && isAgreeValid) {
+                    // Имитация отправки
+                    submitBtn.textContent = 'Отправка...';
+                    submitBtn.disabled = true;
+
+                    setTimeout(function() {
+                        // Скрываем форму, показываем успех
+                        form.style.display = 'none';
+                        successMsg.style.display = 'block';
+
+                        // Сброс кнопки
+                        submitBtn.textContent = 'Отправить сообщение →';
+                        submitBtn.disabled = false;
+
+                        // Через 5 секунд возвращаем форму (для демонстрации)
+                        setTimeout(function() {
+                            form.style.display = 'block';
+                            successMsg.style.display = 'none';
+                            form.reset();
+                            // Сбрасываем стили полей
+                            document.querySelectorAll('.form-control').forEach(el => {
+                                el.style.borderColor = '#E2E8F0';
+                            });
+                        }, 5000);
+                    }, 1500);
+                }
+            });
+
+            // ==================================================
+            // 3. FAQ (АККОРДЕОН)
+            // ==================================================
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    const toggle = this.querySelector('.faq-toggle');
+
+                    // Закрываем другие ответы
+                    document.querySelectorAll('.faq-answer').forEach(a => {
+                        if (a !== answer && a.style.maxHeight) {
+                            a.style.maxHeight = null;
+                            a.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                        }
+                    });
+
+                    // Открываем/закрываем текущий
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                        toggle.textContent = '+';
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        toggle.textContent = '−';
+                    }
+                });
+            });
+
+            // ==================================================
+            // 4. КНОПКА "ЗАКАЗАТЬ ЗВОНОК"
+            // ==================================================
+            const callbackBtn = document.getElementById('callbackBtn');
+            if (callbackBtn) {
+                callbackBtn.addEventListener('click', function() {
+                    // Простая имитация
+                    alert('✅ Заявка на обратный звонок принята!\nМы перезвоним вам в течение 15 минут.');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
