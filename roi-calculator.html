@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ROI-калькулятор окупаемости роботов — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА                                                -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html" class="active">ROI-калькулятор</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  ЗАГОЛОВОК СТРАНИЦЫ                                   -->
+    <!-- ====================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">💰 ROI-калькулятор</h1>
+            <p class="page-subtitle">Узнайте, через сколько месяцев робот окупится в вашем бизнесе. Введите свои данные и получите точный прогноз.</p>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  КАЛЬКУЛЯТОР                                           -->
+    <!-- ====================================================== -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-wrapper">
+
+                <!-- Левая колонка: форма -->
+                <div class="calculator-form">
+                    <h2>📊 Введите данные</h2>
+
+                    <!-- Шаг 1: Выбор робота -->
+                    <div class="form-group">
+                        <label for="robotSelect">🤖 Выберите робота</label>
+                        <select id="robotSelect" class="form-control">
+                            <option value="">-- Выберите модель --</option>
+                        </select>
+                        <p class="form-hint">Или выберите категорию для примерного расчета</p>
+                    </div>
+
+                    <!-- Шаг 2: Категория бизнеса -->
+                    <div class="form-group">
+                        <label for="industrySelect">🏢 Сфера бизнеса</label>
+                        <select id="industrySelect" class="form-control">
+                            <option value="horeca">Рестораны и кафе</option>
+                            <option value="retail">Ритейл и магазины</option>
+                            <option value="logistics">Склады и логистика</option>
+                            <option value="education">Образование</option>
+                            <option value="office">Офисы и бизнес-центры</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <!-- Шаг 3: Стоимость робота (автозаполнение) -->
+                    <div class="form-group">
+                        <label for="robotCost">💰 Стоимость робота (₽)</label>
+                        <input type="number" id="robotCost" class="form-control" placeholder="Например: 3700000" min="0" step="100000" />
+                        <p class="form-hint">Автозаполняется при выборе робота</p>
+                    </div>
+
+                    <!-- Шаг 4: Экономия в месяц -->
+                    <div class="form-group">
+                        <label for="monthlySavings">💵 Экономия в месяц (₽)</label>
+                        <input type="number" id="monthlySavings" class="form-control" placeholder="Например: 85000" min="0" step="5000" />
+                        <p class="form-hint">Сколько денег сэкономит робот за месяц</p>
+                    </div>
+
+                    <!-- Шаг 5: Срок (месяцев) -->
+                    <div class="form-group">
+                        <label for="investmentPeriod">📅 Период расчета (месяцев)</label>
+                        <input type="range" id="investmentPeriod" class="form-range" min="6" max="60" value="36" />
+                        <div class="range-labels">
+                            <span>6 мес</span>
+                            <span id="periodDisplay">36 мес</span>
+                            <span>60 мес</span>
+                        </div>
+                    </div>
+
+                    <!-- Кнопка расчета -->
+                    <button id="calculateBtn" class="btn btn-primary btn-block">Рассчитать ROI →</button>
+                </div>
+
+                <!-- Правая колонка: результаты -->
+                <div class="calculator-results" id="resultsContainer">
+                    <div class="results-placeholder">
+                        <p>📈 Заполните форму и нажмите "Рассчитать ROI"</p>
+                        <p style="color:#94A3B8; font-size:14px;">Мы покажем окупаемость, ROI и экономию</p>
+                    </div>
+
+                    <div id="resultsContent" style="display:none;">
+                        <h2>📈 Результаты расчета</h2>
+
+                        <!-- Карточки результатов -->
+                        <div class="results-grid">
+                            <div class="result-card">
+                                <span class="result-label">💰 Стоимость робота</span>
+                                <span class="result-value" id="resultCost">—</span>
+                            </div>
+                            <div class="result-card highlight-card">
+                                <span class="result-label">⏱️ Окупаемость</span>
+                                <span class="result-value highlight" id="resultPayback">—</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">📊 ROI за период</span>
+                                <span class="result-value" id="resultROI">—</span>
+                            </div>
+                            <div class="result-card">
+                                <span class="result-label">💰 Экономия за период</span>
+                                <span class="result-value" id="resultSavings">—</span>
+                            </div>
+                        </div>
+
+                        <!-- Рекомендация -->
+                        <div class="result-recommendation" id="resultRecommendation">
+                            <!-- Заполняется из JS -->
+                        </div>
+
+                        <!-- Кнопки действий -->
+                        <div class="result-actions">
+                            <a href="catalog.html" class="btn btn-primary">Подобрать робота</a>
+                            <a href="contact.html" class="btn btn-secondary">Связаться с экспертом</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ПРЕИМУЩЕСТВА КАЛЬКУЛЯТОРА                            -->
+    <!-- ====================================================== -->
+    <section class="calculator-benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Почему это важно</span>
+                <h2 class="section-title">Как мы считаем ROI</h2>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h4>Реальные цифры</h4>
+                    <p>Мы используем данные из реальных кейсов внедрения роботов в России</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h4>Понятные метрики</h4>
+                    <p>Окупаемость в месяцах и ROI в процентах — понятно каждому бизнесмену</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h4>Быстрый расчет</h4>
+                    <p>Результат за 1 секунду. Можно сравнить разные модели</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Персональные данные</h4>
+                    <p>Учитываем вашу сферу бизнеса и специфику работы</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР                                                -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <!-- ====================================================== -->
+    <!--  СПЕЦИАЛЬНЫЙ СКРИПТ ДЛЯ КАЛЬКУЛЯТОРА                   -->
+    <!-- ====================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Элементы DOM ---
+            const robotSelect = document.getElementById('robotSelect');
+            const industrySelect = document.getElementById('industrySelect');
+            const robotCost = document.getElementById('robotCost');
+            const monthlySavings = document.getElementById('monthlySavings');
+            const investmentPeriod = document.getElementById('investmentPeriod');
+            const periodDisplay = document.getElementById('periodDisplay');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const resultsContent = document.getElementById('resultsContent');
+            const resultsPlaceholder = document.querySelector('.results-placeholder');
+
+            // Поля результатов
+            const resultCost = document.getElementById('resultCost');
+            const resultPayback = document.getElementById('resultPayback');
+            const resultROI = document.getElementById('resultROI');
+            const resultSavings = document.getElementById('resultSavings');
+            const resultRecommendation = document.getElementById('resultRecommendation');
+
+            // --- Данные для расчета ---
+            const industryMultipliers = {
+                'horeca': 0.03,
+                'retail': 0.025,
+                'logistics': 0.04,
+                'education': 0.02,
+                'office': 0.02,
+                'other': 0.025
+            };
+
+            let robotsData = [];
+
+            // --- Загрузка роботов ---
+            async function loadRobots() {
+                try {
+                    const response = await fetch('data/robots.json');
+                    if (!response.ok) throw new Error('Ошибка загрузки');
+                    const data = await response.json();
+                    robotsData = data.robots || [];
+
+                    // Заполняем select
+                    robotSelect.innerHTML = '<option value="">-- Выберите модель --</option>';
+                    robotsData.forEach(robot => {
+                        const option = document.createElement('option');
+                        option.value = robot.id;
+                        option.textContent = `${robot.icon || '🤖'} ${robot.name} — ${robot.price || 'цена по запросу'}`;
+                        option.dataset.cost = robot.price ? parseInt(robot.price.replace(/[^0-9]/g, '')) : 0;
+                        robotSelect.appendChild(option);
+                    });
+
+                } catch (error) {
+                    console.error('Ошибка загрузки роботов:', error);
+                }
+            }
+
+            // --- Обновление периода ---
+            investmentPeriod.addEventListener('input', function() {
+                periodDisplay.textContent = `${this.value} мес`;
+            });
+
+            // --- Автозаполнение цены при выборе робота ---
+            robotSelect.addEventListener('change', function() {
+                const selected = this.options[this.selectedIndex];
+                const cost = selected.dataset.cost ? parseInt(selected.dataset.cost) : 0;
+                if (cost > 0) {
+                    robotCost.value = cost;
+                    // Автоматически рассчитываем экономию (рекомендуемая)
+                    const industry = industrySelect.value;
+                    const multiplier = industryMultipliers[industry] || 0.03;
+                    const suggestedSavings = Math.round(cost * multiplier);
+                    monthlySavings.value = suggestedSavings;
+                } else {
+                    robotCost.value = '';
+                    monthlySavings.value = '';
+                }
+            });
+
+            // --- Обновление экономии при смене отрасли ---
+            industrySelect.addEventListener('change', function() {
+                const cost = parseInt(robotCost.value) || 0;
+                if (cost > 0) {
+                    const multiplier = industryMultipliers[this.value] || 0.03;
+                    const suggestedSavings = Math.round(cost * multiplier);
+                    monthlySavings.value = suggestedSavings;
+                }
+            });
+
+            // --- Основная функция расчета ---
+            function calculateROI() {
+                // Получаем значения
+                const cost = parseFloat(robotCost.value) || 0;
+                const savings = parseFloat(monthlySavings.value) || 0;
+                const months = parseInt(investmentPeriod.value) || 36;
+
+                // Валидация
+                if (cost <= 0) {
+                    alert('Пожалуйста, укажите стоимость робота');
+                    return;
+                }
+                if (savings <= 0) {
+                    alert('Пожалуйста, укажите экономию в месяц');
+                    return;
+                }
+
+                // Расчеты
+                const totalSavings = savings * months;
+                const paybackMonths = Math.ceil(cost / savings);
+                const roi = ((totalSavings - cost) / cost) * 100;
+
+                // Форматирование
+                const formatPrice = (price) => {
+                    return new Intl.NumberFormat('ru-RU').format(Math.round(price)) + ' ₽';
+                };
+
+                // Отображаем результаты
+                resultCost.textContent = formatPrice(cost);
+                resultPayback.textContent = paybackMonths <= months ? 
+                    `${paybackMonths} месяцев ✅` : 
+                    `> ${months} месяцев ⚠️`;
+                resultROI.textContent = roi > 0 ? 
+                    `+${Math.round(roi)}%` : 
+                    `${Math.round(roi)}%`;
+                resultSavings.textContent = formatPrice(totalSavings);
+
+                // Рекомендация
+                let recommendation = '';
+                if (paybackMonths <= 12) {
+                    recommendation = `
+                        <div class="recommendation good">
+                            <span class="rec-icon">✅</span>
+                            <div>
+                                <strong>Отличная инвестиция!</strong>
+                                <p>Робот окупится менее чем за год. Это высокоэффективное вложение средств.</p>
+                            </div>
+                        </div>
+                    `;
+                } else if (paybackMonths <= 24) {
+                    recommendation = `
+                        <div class="recommendation medium">
+                            <span class="rec-icon">📊</span>
+                            <div>
+                                <strong>Хороший показатель</strong>
+                                <p>Окупаемость в пределах 1-2 лет. Это стандартный срок для промышленного оборудования.</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    recommendation = `
+                        <div class="recommendation caution">
+                            <span class="rec-icon">⚠️</span>
+                            <div>
+                                <strong>Долгий срок окупаемости</strong>
+                                <p>Рассмотрите другие модели или обратитесь к эксперту для оптимизации расчета.</p>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Добавляем информацию о периоде
+                if (paybackMonths > months) {
+                    recommendation += `
+                        <div class="recommendation note">
+                            <span class="rec-icon">ℹ️</span>
+                            <div>
+                                <strong>Примечание:</strong>
+                                <p>Робот не окупится за выбранный период (${months} мес). Рекомендуемый срок эксплуатации — от ${paybackMonths} мес.</p>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                resultRecommendation.innerHTML = recommendation;
+
+                // Показываем результаты
+                resultsPlaceholder.style.display = 'none';
+                resultsContent.style.display = 'block';
+
+                // Плавный скролл к результатам
+                document.getElementById('resultsContainer').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+
+            // --- Обработчик кнопки ---
+            calculateBtn.addEventListener('click', calculateROI);
+
+            // --- Загрузка данных ---
+            loadRobots();
+
+            // --- Мобильное меню ---
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+
+            // --- Enter для расчета ---
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    const active = document.activeElement;
+                    if (active && (active.id === 'robotCost' || active.id === 'monthlySavings')) {
+                        calculateROI();
+                    }
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
