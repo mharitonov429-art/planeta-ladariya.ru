@@ -483,3 +483,20 @@ a:hover {
         gap: 16px;
     }
 }
+/* Добавьте в конец файла style.css */
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 20px 60px rgba(124, 58, 237, 0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .hero-image img {
+        max-width: 280px;
+    }
+}
