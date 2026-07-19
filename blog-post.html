@@ -223,3 +223,98 @@
 
             // --- Получаем ID из URL ---
             const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+
+            const loadingState = document.getElementById('postLoading');
+            const errorState = document.getElementById('postError');
+            const postContent = document.getElementById('postContent');
+
+            const postTitleBreadcrumb = document.getElementById('postTitleBreadcrumb');
+            const postIcon = document.getElementById('postIcon');
+            const postCategory = document.getElementById('postCategory');
+            const postDate = document.getElementById('postDate');
+            const postReadTime = document.getElementById('postReadTime');
+            const postTitle = document.getElementById('postTitle');
+            const postTags = document.getElementById('postTags');
+            const postBody = document.getElementById('postBody');
+
+            // --- Функция форматирования даты ---
+            function formatDate(dateStr) {
+                const date = new Date(dateStr);
+                const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+                return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            }
+
+            // --- Загрузка поста ---
+            if (postId) {
+                const post = postsData.find(p => p.id === postId);
+
+                if (!post) {
+                    loadingState.style.display = 'none';
+                    errorState.style.display = 'block';
+                    return;
+                }
+
+                loadingState.style.display = 'none';
+                postContent.style.display = 'block';
+
+                postTitleBreadcrumb.textContent = post.title;
+                postIcon.textContent = post.icon || '📄';
+                postCategory.textContent = post.category;
+                postDate.textContent = formatDate(post.date);
+                postReadTime.textContent = post.readTime;
+                postTitle.textContent = post.title;
+                postTags.innerHTML = post.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+                // Здесь можно подгружать полный текст статьи
+                // Сейчас просто используем заглушку
+                postBody.innerHTML = `
+                    <p>${post.excerpt}</p>
+                    <p>Это полная версия статьи. В реальном проекте вы можете хранить тексты статей в отдельном JSON-файле или базе данных.</p>
+                    <p>Для вашего сайта можно создать файл <strong>data/posts.json</strong> и загружать статьи оттуда.</p>
+                    <h2>Ключевые выводы</h2>
+                    <ul>
+                        <li>Первый важный пункт</li>
+                        <li>Второй важный пункт</li>
+                        <li>Третий важный пункт</li>
+                    </ul>
+                    <blockquote>
+                        "Цитата из статьи или важная мысль, которую нужно выделить."
+                    </blockquote>
+                    <p>Спасибо, что читаете блог RoboGuide! Подпишитесь на обновления, чтобы не пропустить новые статьи.</p>
+                `;
+
+            } else {
+                loadingState.style.display = 'none';
+                errorState.style.display = 'block';
+                errorState.querySelector('p').textContent = '😕 Статья не выбрана';
+            }
+
+            // --- Мобильное меню ---
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
+            // --- Получаем ID из URL ---
+            const urlParams = new URLSearchParams(window.location.search);
