@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Робот — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА                                                -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  ДЕТАЛЬНАЯ КАРТОЧКА РОБОТА                            -->
+    <!-- ====================================================== -->
+    <section class="robot-detail" id="robotDetail">
+        <div class="container">
+            <!-- Хлебные крошки -->
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> → 
+                <a href="catalog.html">Каталог</a> → 
+                <span id="robotNameBreadcrumb">Робот</span>
+            </div>
+
+            <!-- Загрузка -->
+            <div id="loadingState" class="loading-state">
+                <p>⏳ Загрузка информации о роботе...</p>
+            </div>
+
+            <!-- Ошибка -->
+            <div id="errorState" class="error-state" style="display:none;">
+                <p>😕 Робот не найден</p>
+                <a href="catalog.html" class="btn btn-primary">Вернуться в каталог</a>
+            </div>
+
+            <!-- Контент -->
+            <div id="robotContent" style="display:none;">
+                <div class="detail-grid">
+                    <!-- Левая колонка: иконка/картинка -->
+                    <div class="detail-image">
+                        <div class="detail-icon" id="robotIcon">🤖</div>
+                    </div>
+
+                    <!-- Правая колонка: информация -->
+                    <div class="detail-info">
+                        <h1 class="detail-name" id="robotName">Название робота</h1>
+                        <p class="detail-category" id="robotCategory">Категория</p>
+                        <p class="detail-price" id="robotPrice">Цена</p>
+                        <p class="detail-description" id="robotDescription">Описание</p>
+
+                        <!-- Характеристики -->
+                        <div class="detail-specs">
+                            <h3>📋 Характеристики</h3>
+                            <ul id="robotSpecs">
+                                <!-- Загружаются из JS -->
+                            </ul>
+                        </div>
+
+                        <!-- Кнопки действий -->
+                        <div class="detail-actions">
+                            <a href="#" class="btn btn-primary" id="buyButton">Запросить цену</a>
+                            <a href="roi-calculator.html" class="btn btn-secondary">Рассчитать ROI</a>
+                            <button class="btn btn-outline" id="compareButton">Добавить к сравнению</button>
+                        </div>
+
+                        <!-- Теги -->
+                        <div class="detail-tags" id="robotTags">
+                            <!-- Загружаются из JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Блок ROI (окупаемость) -->
+                <div class="detail-roi">
+                    <h3>📊 Прогноз окупаемости</h3>
+                    <div class="roi-grid">
+                        <div class="roi-item">
+                            <span class="roi-label">Стоимость робота</span>
+                            <span class="roi-value" id="roiCost">—</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">Экономия в месяц</span>
+                            <span class="roi-value" id="roiSavings">—</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">Окупаемость</span>
+                            <span class="roi-value highlight" id="roiPayback">—</span>
+                        </div>
+                        <div class="roi-item">
+                            <span class="roi-label">ROI за 3 года</span>
+                            <span class="roi-value" id="roiPercent">—</span>
+                        </div>
+                    </div>
+                    <p class="roi-note">* Расчет примерный. Точные цифры зависят от вашего бизнеса.</p>
+                </div>
+
+                <!-- Похожие роботы -->
+                <div class="similar-robots">
+                    <h3>🔄 Похожие модели</h3>
+                    <div class="robots-grid" id="similarRobots">
+                        <!-- Загружаются из JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР                                                -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <!-- ====================================================== -->
+    <!--  СПЕЦИАЛЬНЫЙ СКРИПТ ДЛЯ СТРАНИЦЫ ДЕТАЛЬНОЙ КАРТОЧКИ   -->
+    <!-- ====================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Получаем ID робота из URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const robotId = urlParams.get('id');
+
+            // Элементы DOM
+            const loadingState = document.getElementById('loadingState');
+            const errorState = document.getElementById('errorState');
+            const robotContent = document.getElementById('robotContent');
+
+            const robotNameBreadcrumb = document.getElementById('robotNameBreadcrumb');
+            const robotIcon = document.getElementById('robotIcon');
+            const robotName = document.getElementById('robotName');
+            const robotCategory = document.getElementById('robotCategory');
+            const robotPrice = document.getElementById('robotPrice');
+            const robotDescription = document.getElementById('robotDescription');
+            const robotSpecs = document.getElementById('robotSpecs');
+            const robotTags = document.getElementById('robotTags');
+            const similarRobots = document.getElementById('similarRobots');
+
+            const roiCost = document.getElementById('roiCost');
+            const roiSavings = document.getElementById('roiSavings');
+            const roiPayback = document.getElementById('roiPayback');
+            const roiPercent = document.getElementById('roiPercent');
+
+            // --- Функция загрузки робота ---
+            async function loadRobotDetail() {
+                try {
+                    const response = await fetch('data/robots.json');
+                    if (!response.ok) throw new Error('Ошибка загрузки');
+                    const data = await response.json();
+                    const robots = data.robots || [];
+
+                    // Находим нужного робота
+                    const robot = robots.find(r => r.id === robotId);
+
+                    if (!robot) {
+                        loadingState.style.display = 'none';
+                        errorState.style.display = 'block';
+                        return;
+                    }
+
+                    // Показываем контент
+                    loadingState.style.display = 'none';
+                    robotContent.style.display = 'block';
+
+                    // Заполняем данные
+                    robotNameBreadcrumb.textContent = robot.name;
+                    robotIcon.textContent = robot.icon || '🤖';
+                    robotName.textContent = robot.name;
+                    robotCategory.textContent = robot.category || 'Без категории';
+                    robotPrice.textContent = robot.price || 'Цена по запросу';
+                    robotDescription.textContent = robot.description || '';
+
+                    // Характеристики
+                    if (robot.specs && Object.keys(robot.specs).length > 0) {
+                        robotSpecs.innerHTML = Object.entries(robot.specs).map(([key, value]) => `
+                            <li><strong>${key}:</strong> ${value}</li>
+                        `).join('');
+                    } else {
+                        robotSpecs.innerHTML = '<li>Характеристики уточняются</li>';
+                    }
+
+                    // Теги
+                    if (robot.tags && robot.tags.length > 0) {
+                        robotTags.innerHTML = robot.tags.map(tag => `
+                            <span class="tag">${tag}</span>
+                        `).join('');
+                    } else if (robot.category) {
+                        robotTags.innerHTML = `<span class="tag">${robot.category}</span>`;
+                    }
+
+                    // ROI (примерные цифры)
+                    const priceNum = robot.price ? parseInt(robot.price.replace(/[^0-9]/g, '')) : 0;
+                    const monthlySavings = Math.round(priceNum * 0.03); // 3% в месяц
+
+                    if (priceNum > 0) {
+                        roiCost.textContent = formatPrice(priceNum);
+                        roiSavings.textContent = formatPrice(monthlySavings) + ' / мес';
+                        const paybackMonths = Math.ceil(priceNum / monthlySavings);
+                        roiPayback.textContent = `${paybackMonths} месяцев`;
+                        const roi = ((monthlySavings * 36 - priceNum) / priceNum) * 100;
+                        roiPercent.textContent = roi > 0 ? `+${Math.round(roi)}%` : `${Math.round(roi)}%`;
+                    } else {
+                        roiCost.textContent = '—';
+                        roiSavings.textContent = '—';
+                        roiPayback.textContent = '—';
+                        roiPercent.textContent = '—';
+                    }
+
+                    // Похожие роботы
+                    const similar = robots.filter(r => 
+                        r.id !== robot.id && r.category === robot.category
+                    ).slice(0, 3);
+
+                    if (similar.length > 0) {
+                        similarRobots.innerHTML = similar.map(r => `
+                            <div class="robot-card">
+                                <div class="robot-image">${r.icon || '🤖'}</div>
+                                <h4>${r.name}</h4>
+                                <p class="robot-price">${r.price || 'Цена по запросу'}</p>
+                                <a href="robot-detail.html?id=${r.id}" class="btn btn-small">Подробнее →</a>
+                            </div>
+                        `).join('');
+                    } else {
+                        similarRobots.innerHTML = '<p style="color:#94A3B8;">Похожих моделей пока нет</p>';
+                    }
+
+                } catch (error) {
+                    console.error('Ошибка:', error);
+                    loadingState.style.display = 'none';
+                    errorState.style.display = 'block';
+                }
+            }
+
+            // --- Вспомогательная функция форматирования цены ---
+            function formatPrice(price) {
+                return new Intl.NumberFormat('ru-RU').format(price) + ' ₽';
+            }
+
+            // --- Мобильное меню ---
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+
+            // --- Запуск ---
+            if (robotId) {
+                loadRobotDetail();
+            } else {
+                loadingState.style.display = 'none';
+                errorState.style.display = 'block';
+                errorState.querySelector('p').textContent = '😕 Робот не выбран';
+            }
+        });
+    </script>
+
+</body>
+</html>
