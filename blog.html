@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Блог о робототехнике — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА                                                -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html" class="active">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  ЗАГОЛОВОК БЛОГА                                      -->
+    <!-- ====================================================== -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">📝 Блог о робототехнике</h1>
+            <p class="page-subtitle">Обзоры, кейсы, новости и практические советы по внедрению роботов в бизнес</p>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФИЛЬТРЫ КАТЕГОРИЙ БЛОГА                              -->
+    <!-- ====================================================== -->
+    <section class="blog-filters">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <span class="filter-label">📂 Категории:</span>
+                    <div class="filter-buttons" id="blogFilterButtons">
+                        <button class="filter-btn active" data-category="all">Все</button>
+                        <button class="filter-btn" data-category="обзоры">🔍 Обзоры</button>
+                        <button class="filter-btn" data-category="кейсы">📊 Кейсы</button>
+                        <button class="filter-btn" data-category="новости">📰 Новости</button>
+                        <button class="filter-btn" data-category="советы">💡 Советы</button>
+                        <button class="filter-btn" data-category="интервью">🎙️ Интервью</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">📅 Сортировка:</span>
+                    <div class="filter-buttons" id="sortButtons">
+                        <button class="filter-btn active" data-sort="newest">Новые</button>
+                        <button class="filter-btn" data-sort="popular">Популярные</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  СЕТКА СТАТЕЙ БЛОГА                                   -->
+    <!-- ====================================================== -->
+    <section class="blog-grid">
+        <div class="container">
+            <div class="blog-stats">
+                <span id="postCount">Загрузка...</span>
+            </div>
+            <div class="blog-posts-grid" id="blogPosts">
+                <!-- Посты загружаются из JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ПОДПИСКА НА БЛОГ                                     -->
+    <!-- ====================================================== -->
+    <section class="blog-subscribe">
+        <div class="container">
+            <div class="subscribe-wrapper">
+                <div class="subscribe-content">
+                    <h2>📬 Подпишитесь на обновления</h2>
+                    <p>Получайте новые статьи о робототехнике и бизнесе первыми</p>
+                </div>
+                <form class="subscribe-form" id="subscribeForm">
+                    <input type="email" placeholder="Ваш email" required />
+                    <button type="submit" class="btn btn-primary">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР                                                -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <!-- ====================================================== -->
+    <!--  СПЕЦИАЛЬНЫЙ СКРИПТ ДЛЯ БЛОГА                          -->
+    <!-- ====================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Данные для блога (временно хранятся в JS) ---
+            // В будущем можно вынести в отдельный JSON файл
+            const postsData = [{
+                id: "post-1",
+                title: "Unitree G1: Обзор первого доступного гуманоида в России",
+                category: "обзоры",
+                date: "2026-01-15",
+                readTime: "8 мин",
+                excerpt: "Разбираем характеристики, возможности и реальные сценарии использования гуманоидного робота Unitree G1 в бизнесе и образовании.",
+                icon: "🦾",
+                tags: ["гуманоиды", "обзор", "Unitree"]
+            }, {
+                id: "post-2",
+                title: "Как робот-официант окупился в кофейне за 8 месяцев: реальный кейс",
+                category: "кейсы",
+                date: "2026-01-10",
+                readTime: "6 мин",
+                excerpt: "История владельца кофейни в Москве, который внедрил робота-официанта и увеличил средний чек на 30%.",
+                icon: "☕",
+                tags: ["кейсы", "HoReCa", "окупаемость"]
+            }, {
+                id: "post-3",
+                title: "Топ-5 сервисных роботов для розничной торговли в 2026 году",
+                category: "обзоры",
+                date: "2026-01-05",
+                readTime: "10 мин",
+                excerpt: "Сравниваем лучших роботов-консультантов и промоутеров для магазинов, ТЦ и бутиков.",
+                icon: "🛍️",
+                tags: ["ритейл", "обзор", "сервис"]
+            }, {
+                id: "post-4",
+                title: "Китайские роботы захватывают рынок: кто заменит европейских производителей",
+                category: "новости",
+                date: "2025-12-28",
+                readTime: "5 мин",
+                excerpt: "Анализ ситуации на рынке робототехники: почему китайские бренды становятся лидерами в России и что это значит для бизнеса.",
+                icon: "🇨🇳",
+                tags: ["новости", "рынок", "китай"]
+            }, {
+                id: "post-5",
+                title: "Как выбрать робота для школы: полное руководство для директоров",
+                category: "советы",
+                date: "2025-12-20",
+                readTime: "7 мин",
+                excerpt: "Практические рекомендации по выбору образовательных роботов для школ, кружков и IT-лагерей.",
+                icon: "🎓",
+                tags: ["образование", "советы", "школа"]
+            }, {
+                id: "post-6",
+                title: "Интервью с основателем RoboGuide: будущее роботов в России",
+                category: "интервью",
+                date: "2025-12-15",
+                readTime: "12 мин",
+                excerpt: "Эксклюзивное интервью о том, как меняется рынок робототехники, какие тренды ждать и как бизнесу подготовиться.",
+                icon: "🎙️",
+                tags: ["интервью", "будущее", "рынок"]
+            }, {
+                id: "post-7",
+                title: "Роботы-собаки для охраны: новый тренд или маркетинговый ход?",
+                category: "обзоры",
+                date: "2025-12-10",
+                readTime: "6 мин",
+                excerpt: "Разбираем реальные возможности и ограничения использования бионических роботов-собак в охранных системах.",
+                icon: "🐕",
+                tags: ["роботы-собаки", "охрана", "обзор"]
+            }, {
+                id: "post-8",
+                title: "Как посчитать ROI робота за 5 минут: формула для предпринимателей",
+                category: "советы",
+                date: "2025-12-05",
+                readTime: "4 мин",
+                excerpt: "Простая методика расчета окупаемости робота, которая поможет вам принять решение о покупке.",
+                icon: "📊",
+                tags: ["ROI", "советы", "бизнес"]
+            }, {
+                id: "post-9",
+                title: "Промышленные роботы на складах: экономия до 60% на логистике",
+                category: "кейсы",
+                date: "2025-11-28",
+                readTime: "9 мин",
+                excerpt: "Реальные примеры внедрения роботизированных систем на складах и их влияние на эффективность работы.",
+                icon: "📦",
+                tags: ["логистика", "склады", "кейсы"]
+            }];
+
+            // --- Элементы DOM ---
+            const postsGrid = document.getElementById('blogPosts');
+            const postCount = document.getElementById('postCount');
+            const filterButtons = document.querySelectorAll('#blogFilterButtons .filter-btn');
+            const sortButtons = document.querySelectorAll('#sortButtons .filter-btn');
+
+            let currentCategory = 'all';
+            let currentSort = 'newest';
+            let filteredPosts = [...postsData];
+
+            // --- Функция рендеринга постов ---
+            function renderPosts(posts) {
+                if (!posts || posts.length === 0) {
+                    postsGrid.innerHTML = `
+                        <div class="empty-state" style="grid-column: 1/-1; text-align:center; padding:60px 0;">
+                            <p style="font-size:48px;">📭</p>
+                            <p style="font-size:18px; font-weight:600; margin-top:16px;">Статей не найдено</p>
+                            <p style="color:#94A3B8; font-size:14px;">Попробуйте выбрать другую категорию</p>
+                        </div>
+                    `;
+                    postCount.textContent = '0 статей';
+                    return;
+                }
+
+                postsGrid.innerHTML = posts.map(post => `
+                    <article class="blog-post-card" data-id="${post.id}">
+                        <div class="post-icon">${post.icon || '📄'}</div>
+                        <div class="post-meta">
+                            <span class="post-category">${post.category}</span>
+                            <span class="post-date">${formatDate(post.date)}</span>
+                            <span class="post-read-time">${post.readTime}</span>
+                        </div>
+                        <h3><a href="blog-post.html?id=${post.id}">${post.title}</a></h3>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <div class="post-tags">
+                            ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                        <a href="blog-post.html?id=${post.id}" class="btn btn-small">Читать →</a>
+                    </article>
+                `).join('');
+
+                postCount.textContent = `${posts.length} статей`;
+            }
+
+            // --- Вспомогательная функция форматирования даты ---
+            function formatDate(dateStr) {
+                const date = new Date(dateStr);
+                const months = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+                return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+            }
+
+            // --- Функция фильтрации и сортировки ---
+            function filterAndSort() {
+                let result = [...postsData];
+
+                // Фильтр по категории
+                if (currentCategory !== 'all') {
+                    result = result.filter(p => p.category === currentCategory);
+                }
+
+                // Сортировка
+                if (currentSort === 'newest') {
+                    result.sort((a, b) => new Date(b.date) - new Date(a.date));
+                } else if (currentSort === 'popular') {
+                    // Для демонстрации - просто перемешиваем
+                    result.sort((a, b) => a.id.localeCompare(b.id) * -1);
+                }
+
+                filteredPosts = result;
+                renderPosts(result);
+            }
+
+            // --- Обработчики фильтров ---
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentCategory = this.dataset.category;
+                    filterAndSort();
+                });
+            });
+
+            sortButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    sortButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentSort = this.dataset.sort;
+                    filterAndSort();
+                });
+            });
+
+            // --- Подписка (простая демонстрация) ---
+            const subscribeForm = document.getElementById('subscribeForm');
+            if (subscribeForm) {
+                subscribeForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    if (email) {
+                        alert(`✅ Спасибо за подписку, ${email}! Вы будете получать наши новые статьи.`);
+                        this.querySelector('input[type="email"]').value = '';
+                    }
+                });
+            }
+
+            // --- Мобильное меню ---
+            const toggleBtn = document.getElementById('mobileMenuToggle');
+            const navList = document.querySelector('.nav-list');
+            if (toggleBtn && navList) {
+                toggleBtn.addEventListener('click', function() {
+                    if (navList.style.display === 'flex') {
+                        navList.style.display = 'none';
+                    } else {
+                        navList.style.display = 'flex';
+                        navList.style.flexDirection = 'column';
+                        navList.style.position = 'absolute';
+                        navList.style.top = '72px';
+                        navList.style.left = '0';
+                        navList.style.right = '0';
+                        navList.style.background = 'white';
+                        navList.style.padding = '24px';
+                        navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+                        navList.style.gap = '16px';
+                    }
+                });
+            }
+
+            // --- Инициализация ---
+            renderPosts(postsData);
+        });
+    </script>
+
+</body>
+</html>
