@@ -1202,3 +1202,255 @@ a:hover {
         grid-template-columns: 1fr;
     }
 }
+/* ============================================================
+   СТРАНИЦА БЛОГА
+============================================================ */
+
+/* --- Фильтры блога --- */
+.blog-filters {
+    padding: 24px 0;
+    border-bottom: 1px solid #E2E8F0;
+    background: white;
+    position: sticky;
+    top: 72px;
+    z-index: 50;
+}
+
+/* --- Сетка постов --- */
+.blog-grid {
+    padding: 40px 0 60px;
+}
+
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- Карточка поста --- */
+.blog-post-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border: 1px solid #E2E8F0;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary);
+}
+
+.post-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 12px;
+}
+
+.post-category {
+    display: inline-block;
+    background: var(--light-gray);
+    padding: 2px 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.post-date {
+    color: var(--gray);
+}
+
+.post-read-time {
+    color: var(--gray);
+}
+
+.blog-post-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.blog-post-card h3 a {
+    color: var(--dark);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.blog-post-card h3 a:hover {
+    color: var(--primary);
+}
+
+.post-excerpt {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.post-tags .tag {
+    padding: 2px 12px;
+    border-radius: 50px;
+    background: var(--light-gray);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--gray);
+}
+
+.blog-post-card .btn-small {
+    align-self: flex-start;
+}
+
+.blog-stats {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 24px;
+}
+
+/* --- Подписка --- */
+.blog-subscribe {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #EDE9FE 0%, #F8FAFC 100%);
+}
+
+.subscribe-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    background: white;
+    padding: 40px 48px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.subscribe-content h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.subscribe-content p {
+    color: var(--gray);
+    font-size: 16px;
+}
+
+.subscribe-form {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 12px 20px;
+    border: 1px solid #E2E8F0;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    min-width: 280px;
+    transition: var(--transition);
+}
+
+.subscribe-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
+.subscribe-form .btn {
+    padding: 12px 32px;
+}
+
+/* --- Пустое состояние --- */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.empty-state .empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+/* --- Адаптация --- */
+@media (max-width: 992px) {
+    .blog-posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subscribe-wrapper {
+        flex-direction: column;
+        text-align: center;
+        padding: 32px 24px;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscribe-form input[type="email"] {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .subscribe-form .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-posts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-post-card {
+        padding: 20px;
+    }
+
+    .blog-filters {
+        top: 60px;
+        padding: 16px 0;
+    }
+
+    .filter-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .subscribe-content h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-post-card h3 {
+        font-size: 16px;
+    }
+
+    .post-meta {
+        font-size: 12px;
+    }
+}
