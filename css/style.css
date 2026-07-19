@@ -500,3 +500,131 @@ a:hover {
         max-width: 280px;
     }
 }
+/* ============================================================
+   СТРАНИЦА КАТАЛОГА
+============================================================ */
+
+/* --- Заголовок страницы --- */
+.page-header {
+    padding: 60px 0 40px;
+    background: linear-gradient(135deg, #F8FAFC 0%, #EDE9FE 100%);
+}
+
+.page-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 600px;
+}
+
+/* --- Фильтры --- */
+.catalog-filters {
+    padding: 24px 0;
+    border-bottom: 1px solid #E2E8F0;
+    background: white;
+    position: sticky;
+    top: 72px;
+    z-index: 50;
+}
+
+.filter-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.filter-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--gray);
+    margin-right: 4px;
+}
+
+.filter-btn {
+    padding: 6px 16px;
+    border-radius: 50px;
+    border: 1px solid #E2E8F0;
+    background: white;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* --- Сетка каталога --- */
+.catalog-grid {
+    padding: 40px 0 80px;
+}
+
+.catalog-stats {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 24px;
+}
+
+/* --- Теги роботов --- */
+.robot-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 8px 0 12px;
+}
+
+.tag {
+    padding: 2px 12px;
+    border-radius: 50px;
+    background: var(--light-gray);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+/* --- Адаптация --- */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .filter-wrapper {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .filter-group {
+        flex-wrap: wrap;
+    }
+
+    .filter-btn {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+
+    .catalog-filters {
+        top: 60px;
+        padding: 16px 0;
+    }
+}
