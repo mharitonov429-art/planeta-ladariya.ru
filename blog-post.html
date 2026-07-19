@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Статья — RoboGuide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ====================================================== -->
+    <!--  ШАПКА                                                -->
+    <!-- ====================================================== -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="index.html#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html" class="active">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ====================================================== -->
+    <!--  СТАТЬЯ                                               -->
+    <!-- ====================================================== -->
+    <section class="blog-post-detail">
+        <div class="container">
+            <div class="breadcrumbs">
+                <a href="index.html">Главная</a> → 
+                <a href="blog.html">Блог</a> → 
+                <span id="postTitleBreadcrumb">Статья</span>
+            </div>
+
+            <div id="postLoading" class="loading-state">
+                <p>⏳ Загрузка статьи...</p>
+            </div>
+
+            <div id="postError" class="error-state" style="display:none;">
+                <p>😕 Статья не найдена</p>
+                <a href="blog.html" class="btn btn-primary">Вернуться в блог</a>
+            </div>
+
+            <div id="postContent" style="display:none;">
+                <article class="post-article">
+                    <div class="post-header">
+                        <div class="post-icon-large" id="postIcon">📄</div>
+                        <div class="post-meta">
+                            <span class="post-category" id="postCategory">Категория</span>
+                            <span class="post-date" id="postDate">Дата</span>
+                            <span class="post-read-time" id="postReadTime">Время чтения</span>
+                        </div>
+                        <h1 id="postTitle">Заголовок статьи</h1>
+                        <div class="post-tags" id="postTags"></div>
+                    </div>
+                    <div class="post-body" id="postBody">
+                        <!-- Полный текст статьи -->
+                        <p>Здесь будет полный текст статьи. Для демонстрации используется заглушка.</p>
+                        <p>В реальном проекте вы можете хранить статьи в отдельном JSON-файле или в базе данных.</p>
+                        <h2>Пример подзаголовка</h2>
+                        <p>Текст с примером <strong>жирного выделения</strong> и <em>курсива</em>.</p>
+                        <ul>
+                            <li>Пункт списка 1</li>
+                            <li>Пункт списка 2</li>
+                            <li>Пункт списка 3</li>
+                        </ul>
+                        <blockquote>
+                            Цитата — важная мысль, которую нужно выделить.
+                        </blockquote>
+                    </div>
+
+                    <div class="post-actions">
+                        <a href="blog.html" class="btn btn-secondary">← Вернуться в блог</a>
+                        <a href="contact.html" class="btn btn-primary">Связаться с экспертом</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================================================== -->
+    <!--  ФУТЕР                                                -->
+    <!-- ====================================================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================================================== -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                -->
+    <!-- ====================================================== -->
+    <script src="js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Данные статей (копия из blog.html) ---
+            const postsData = [{
+                id: "post-1",
+                title: "Unitree G1: Обзор первого доступного гуманоида в России",
+                category: "обзоры",
+                date: "2026-01-15",
+                readTime: "8 мин",
+                excerpt: "Разбираем характеристики, возможности и реальные сценарии использования гуманоидного робота Unitree G1 в бизнесе и образовании.",
+                icon: "🦾",
+                tags: ["гуманоиды", "обзор", "Unitree"]
+            }, {
+                id: "post-2",
+                title: "Как робот-официант окупился в кофейне за 8 месяцев: реальный кейс",
+                category: "кейсы",
+                date: "2026-01-10",
+                readTime: "6 мин",
+                excerpt: "История владельца кофейни в Москве, который внедрил робота-официанта и увеличил средний чек на 30%.",
+                icon: "☕",
+                tags: ["кейсы", "HoReCa", "окупаемость"]
+            }, {
+                id: "post-3",
+                title: "Топ-5 сервисных роботов для розничной торговли в 2026 году",
+                category: "обзоры",
+                date: "2026-01-05",
+                readTime: "10 мин",
+                excerpt: "Сравниваем лучших роботов-консультантов и промоутеров для магазинов, ТЦ и бутиков.",
+                icon: "🛍️",
+                tags: ["ритейл", "обзор", "сервис"]
+            }, {
+                id: "post-4",
+                title: "Китайские роботы захватывают рынок: кто заменит европейских производителей",
+                category: "новости",
+                date: "2025-12-28",
+                readTime: "5 мин",
+                excerpt: "Анализ ситуации на рынке робототехники: почему китайские бренды становятся лидерами в России и что это значит для бизнеса.",
+                icon: "🇨🇳",
+                tags: ["новости", "рынок", "китай"]
+            }, {
+                id: "post-5",
+                title: "Как выбрать робота для школы: полное руководство для директоров",
+                category: "советы",
+                date: "2025-12-20",
+                readTime: "7 мин",
+                excerpt: "Практические рекомендации по выбору образовательных роботов для школ, кружков и IT-лагерей.",
+                icon: "🎓",
+                tags: ["образование", "советы", "школа"]
+            }, {
+                id: "post-6",
+                title: "Интервью с основателем RoboGuide: будущее роботов в России",
+                category: "интервью",
+                date: "2025-12-15",
+                readTime: "12 мин",
+                excerpt: "Эксклюзивное интервью о том, как меняется рынок робототехники, какие тренды ждать и как бизнесу подготовиться.",
+                icon: "🎙️",
+                tags: ["интервью", "будущее", "рынок"]
+            }, {
+                id: "post-7",
+                title: "Роботы-собаки для охраны: новый тренд или маркетинговый ход?",
+                category: "обзоры",
+                date: "2025-12-10",
+                readTime: "6 мин",
+                excerpt: "Разбираем реальные возможности и ограничения использования бионических роботов-собак в охранных системах.",
+                icon: "🐕",
+                tags: ["роботы-собаки", "охрана", "обзор"]
+            }, {
+                id: "post-8",
+                title: "Как посчитать ROI робота за 5 минут: формула для предпринимателей",
+                category: "советы",
+                date: "2025-12-05",
+                readTime: "4 мин",
+                excerpt: "Простая методика расчета окупаемости робота, которая поможет вам принять решение о покупке.",
+                icon: "📊",
+                tags: ["ROI", "советы", "бизнес"]
+            }, {
+                id: "post-9",
+                title: "Промышленные роботы на складах: экономия до 60% на логистике",
+                category: "кейсы",
+                date: "2025-11-28",
+                readTime: "9 мин",
+                excerpt: "Реальные примеры внедрения роботизированных систем на складах и их влияние на эффективность работы.",
+                icon: "📦",
+                tags: ["логистика", "склады", "кейсы"]
+            }];
+
+            // --- Получаем ID из URL ---
+            const urlParams = new URLSearchParams(window.location.search);
