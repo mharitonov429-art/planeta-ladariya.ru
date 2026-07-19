@@ -1,1 +1,232 @@
-<h1>Сайт скоро будет готов!</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>RoboGuide — Экспертный каталог роботов для бизнеса</title>
+
+    <!-- ✅ Подключаем CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- ✅ Шрифты (опционально) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- ========================================================= -->
+    <!--  ШАПКА САЙТА (НАВИГАЦИЯ)                                  -->
+    <!-- ========================================================= -->
+    <header class="site-header">
+        <div class="container header-grid">
+            <!-- Логотип -->
+            <div class="logo">
+                <a href="/">
+                    <span class="logo-icon">🤖</span>
+                    <span class="logo-text">Robo<span class="highlight">Guide</span></span>
+                </a>
+            </div>
+
+            <!-- Навигационное меню -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="#solutions">Решения</a></li>
+                    <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="about.html">О нас</a></li>
+                    <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Кнопка для мобильной версии -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+        </div>
+    </header>
+
+    <!-- ========================================================= -->
+    <!--  ГЛАВНЫЙ БАННЕР (HERO)                                   -->
+    <!-- ========================================================= -->
+    <section class="hero" id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <p class="hero-badge">🚀 Экспертный путеводитель по рынку роботов</p>
+                <h1 class="hero-title">
+                    Роботы, которые<br />
+                    <span class="highlight">решают бизнес-задачи</span>
+                </h1>
+                <p class="hero-desc">
+                    Подберем, рассчитаем окупаемость и поможем внедрить робота
+                    в ваш бизнес. Без сложного железа и лишних затрат.
+                </p>
+                <div class="hero-buttons">
+                    <a href="catalog.html" class="btn btn-primary">Перейти в каталог →</a>
+                    <a href="roi-calculator.html" class="btn btn-secondary">Рассчитать ROI</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">моделей роботов</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">реальных кейса</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">97%</span>
+                        <span class="stat-label">клиентов довольны</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/hero-robot.png" alt="Робот-гуманоид" />
+                <!-- Если картинки нет, можно использовать эмодзи или SVG -->
+                <div class="hero-robot-placeholder">🤖</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!--  РАЗДЕЛ: РЕШЕНИЯ ПО ОТРАСЛЯМ                            -->
+    <!-- ========================================================= -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Что мы предлагаем</span>
+                <h2 class="section-title">Роботы для вашего бизнеса</h2>
+                <p class="section-desc">
+                    Выберите свою отрасль — мы покажем лучшие решения с расчётом окупаемости.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <!-- Карточка 1: HoReCa -->
+                <div class="solution-card">
+                    <div class="solution-icon">🍽️</div>
+                    <h3>Рестораны и отели</h3>
+                    <p>Роботы-официанты, уборщики и консьержи. Снижение ФОТ до 40%.</p>
+                    <a href="catalog.html?industry=horeca" class="link-arrow">Подобрать →</a>
+                </div>
+
+                <!-- Карточка 2: Ритейл -->
+                <div class="solution-card">
+                    <div class="solution-icon">🛍️</div>
+                    <h3>Магазины и ТЦ</h3>
+                    <p>Роботы-консультанты, промоутеры, инвентаризаторы. Повышение продаж на 25%.</p>
+                    <a href="catalog.html?industry=retail" class="link-arrow">Подобрать →</a>
+                </div>
+
+                <!-- Карточка 3: Образование -->
+                <div class="solution-card">
+                    <div class="solution-icon">🎓</div>
+                    <h3>Школы и кружки</h3>
+                    <p>Образовательные наборы, программируемые платформы. Развиваем инженеров будущего.</p>
+                    <a href="catalog.html?industry=education" class="link-arrow">Подобрать →</a>
+                </div>
+
+                <!-- Карточка 4: Склады и логистика -->
+                <div class="solution-card">
+                    <div class="solution-icon">📦</div>
+                    <h3>Склады и производство</h3>
+                    <p>Логистические платформы, манипуляторы. Рост эффективности до 60%.</p>
+                    <a href="catalog.html?industry=logistics" class="link-arrow">Подобрать →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!--  РАЗДЕЛ: ТОП-3 ПОПУЛЯРНЫХ РОБОТОВ                       -->
+    <!-- ========================================================= -->
+    <section class="popular-robots">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Хиты продаж</span>
+                <h2 class="section-title">Самые востребованные модели</h2>
+            </div>
+
+            <div class="robots-grid" id="popularRobots">
+                <!-- Данные будут подгружаться из JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!--  ФУТЕР (ПОДВАЛ)                                          -->
+    <!-- ========================================================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h4>🤖 RoboGuide</h4>
+                    <p>Экспертный каталог роботов для бизнеса. Подбор, ROI-калькуляция, внедрение.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Меню</h4>
+                    <ul>
+                        <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="blog.html">Блог</a></li>
+                        <li><a href="about.html">О нас</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Помощь</h4>
+                    <ul>
+                        <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
+                        <li><a href="#">Чек-лист внедрения</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Связаться</h4>
+                    <p>📧 info@roboguide.ru</p>
+                    <p>📞 +7 (999) 123-45-67</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RoboGuide. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!--  ПОДКЛЮЧАЕМ JAVASCRIPT                                   -->
+    <!-- ========================================================= -->
+    <script src="js/main.js"></script>
+
+    <!-- Скрипт для подгрузки популярных роботов -->
+    <script>
+        // Это временный скрипт. Данные возьмем из robots.json позже.
+        // Пока выводим заглушки.
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('popularRobots');
+            if (container) {
+                container.innerHTML = `
+                    <div class="robot-card">
+                        <div class="robot-image">🦾</div>
+                        <h4>Unitree G1</h4>
+                        <p class="robot-price">от 3 700 000 ₽</p>
+                        <p class="robot-desc">Гуманоид для образования и R&D</p>
+                        <a href="robot-detail.html?id=unitree-g1" class="btn btn-small">Подробнее</a>
+                    </div>
+                    <div class="robot-card">
+                        <div class="robot-image">🐕</div>
+                        <h4>Unitree Go2</h4>
+                        <p class="robot-price">от 1 200 000 ₽</p>
+                        <p class="robot-desc">Бионическая собака для сервиса</p>
+                        <a href="robot-detail.html?id=unitree-go2" class="btn btn-small">Подробнее</a>
+                    </div>
+                    <div class="robot-card">
+                        <div class="robot-image">🤖</div>
+                        <h4>Promobot V.4</h4>
+                        <p class="robot-price">от 2 500 000 ₽</p>
+                        <p class="robot-desc">Сервисный робот-консультант</p>
+                        <a href="robot-detail.html?id=promobot-v4" class="btn btn-small">Подробнее</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+
+</body>
+</html>
