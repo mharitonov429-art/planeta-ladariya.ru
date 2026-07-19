@@ -628,3 +628,239 @@ a:hover {
         padding: 16px 0;
     }
 }
+/* ============================================================
+   СТРАНИЦА ДЕТАЛЬНОЙ КАРТОЧКИ
+============================================================ */
+
+/* --- Хлебные крошки --- */
+.breadcrumbs {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 32px;
+}
+
+.breadcrumbs a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* --- Загрузка и ошибка --- */
+.loading-state,
+.error-state {
+    text-align: center;
+    padding: 80px 0;
+    font-size: 18px;
+    color: var(--gray);
+}
+
+.error-state .btn {
+    margin-top: 16px;
+}
+
+/* --- Сетка детальной карточки --- */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.detail-icon {
+    font-size: 200px;
+    text-align: center;
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    padding: 40px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-name {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.detail-category {
+    display: inline-block;
+    background: var(--light-gray);
+    padding: 4px 16px;
+    border-radius: 50px;
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+.detail-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.detail-description {
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* --- Характеристики --- */
+.detail-specs {
+    margin-bottom: 24px;
+}
+
+.detail-specs h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.detail-specs ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-specs ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #F1F5F9;
+    font-size: 15px;
+}
+
+.detail-specs ul li strong {
+    color: var(--dark);
+    min-width: 120px;
+    display: inline-block;
+}
+
+/* --- Кнопки действий --- */
+.detail-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+/* --- Теги --- */
+.detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* --- Блок ROI --- */
+.detail-roi {
+    background: var(--light-gray);
+    border-radius: var(--radius);
+    padding: 32px 40px;
+    margin-bottom: 60px;
+}
+
+.detail-roi h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.roi-item {
+    text-align: center;
+}
+
+.roi-label {
+    display: block;
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 4px;
+}
+
+.roi-value {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.roi-value.highlight {
+    color: var(--primary);
+}
+
+.roi-note {
+    font-size: 13px;
+    color: var(--gray);
+    margin-top: 16px;
+    text-align: center;
+}
+
+/* --- Похожие роботы --- */
+.similar-robots {
+    margin-top: 40px;
+}
+
+.similar-robots h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.similar-robots .robots-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* --- Адаптация --- */
+@media (max-width: 992px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .detail-icon {
+        font-size: 120px;
+        min-height: 200px;
+    }
+
+    .roi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-name {
+        font-size: 28px;
+    }
+
+    .detail-price {
+        font-size: 22px;
+    }
+
+    .detail-roi {
+        padding: 24px;
+    }
+
+    .roi-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .roi-value {
+        font-size: 20px;
+    }
+
+    .similar-robots .robots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-actions {
+        flex-direction: column;
+    }
+
+    .detail-actions .btn {
+        text-align: center;
+    }
+}
