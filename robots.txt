@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /privacy.html
+Disallow: /oferta.html
+
+Sitemap: https://planeta-ladariya.ru/sitemap.xml
