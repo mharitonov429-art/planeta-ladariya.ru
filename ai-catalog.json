@@ -1,0 +1,58 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "RoboGuide — каталог роботов для бизнеса",
+    "identifier": "planeta-ladariya.ru"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:llms-txt",
+      "displayName": "Индекс сайта для нейросетей (llms.txt)",
+      "type": "text/plain",
+      "url": "https://planeta-ladariya.ru/llms.txt",
+      "description": "Краткое описание сайта и список ключевых страниц: каталог из 16 роботов по пяти категориям, ROI-калькулятор, блог, контакты."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:sitemap",
+      "displayName": "Карта сайта (sitemap.xml)",
+      "type": "application/xml",
+      "url": "https://planeta-ladariya.ru/sitemap.xml",
+      "description": "Полный список страниц сайта с датами обновления, включая карточку каждого робота. Все страницы на русском языке."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:robots-json",
+      "displayName": "Каталог роботов в JSON",
+      "type": "application/json",
+      "url": "https://planeta-ladariya.ru/data/robots.json",
+      "description": "Все модели каталога в машиночитаемом виде: название, категория, ориентировочная цена в рублях, описание, характеристики, теги. Цены ориентировочные и могут меняться."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:catalog",
+      "displayName": "Каталог роботов для бизнеса",
+      "type": "text/html",
+      "url": "https://planeta-ladariya.ru/catalog.html",
+      "description": "Страница каталога: гуманоиды, роботы-собаки, сервисные, образовательные и логистические роботы с фильтрами по категории и цене."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:roi-calculator",
+      "displayName": "ROI-калькулятор окупаемости роботов",
+      "type": "text/html",
+      "url": "https://planeta-ladariya.ru/roi-calculator.html",
+      "description": "Интерактивный калькулятор: срок окупаемости и ROI робота для выбранной отрасли. Результат — оценка, а не гарантия."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:blog",
+      "displayName": "Блог о роботах для бизнеса",
+      "type": "text/html",
+      "url": "https://planeta-ladariya.ru/blog.html",
+      "description": "Обзоры и практические материалы по выбору и внедрению роботов в бизнес."
+    },
+    {
+      "identifier": "urn:ai:planeta-ladariya.ru:knowledge:contact",
+      "displayName": "Контакты и форма обратной связи",
+      "type": "text/html",
+      "url": "https://planeta-ladariya.ru/contact.html",
+      "description": "Телефон, email, Telegram, ВКонтакте и форма для заявки на консультацию по подбору робота."
+    }
+  ]
+}

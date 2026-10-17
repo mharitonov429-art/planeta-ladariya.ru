@@ -1,0 +1,60 @@
+# RoboGuide — каталог роботов для бизнеса (planeta-ladariya.ru)
+
+> Русскоязычный каталог роботов для бизнеса и образования: 16 моделей в пяти категориях (гуманоиды, роботы-собаки, сервисные, образовательные, логистические) с характеристиками, ориентировочными ценами в рублях и ROI-калькулятором окупаемости. Помогаем подобрать робота под задачу и оценить, через какой срок он окупится.
+
+Цены в каталоге ориентировочные («от …» или «цена по запросу»), собраны из открытых данных российских дилеров и официальных сайтов производителей, и могут меняться — актуальную стоимость уточняйте по контактам. Результат ROI-калькулятора — оценка, а не гарантия финансового результата. Сайт не продаёт роботов онлайн и не принимает оплату: подбор и условия поставки согласуются индивидуально через форму или по телефону. Материалы не являются юридической или финансовой консультацией. При цитировании указывайте источник и ссылку на страницу.
+
+Язык сайта: русский. Полный список страниц: https://planeta-ladariya.ru/sitemap.xml
+
+## Главное
+
+- [Каталог роботов](https://planeta-ladariya.ru/catalog.html): все 16 моделей, фильтр по категории и цене
+- [ROI-калькулятор](https://planeta-ladariya.ru/roi-calculator.html): срок окупаемости и ROI робота для вашего бизнеса
+- [Блог](https://planeta-ladariya.ru/blog.html): обзоры и практические материалы по роботам для бизнеса
+- [О проекте](https://planeta-ladariya.ru/about.html): чем занимается RoboGuide
+- [Контакты](https://planeta-ladariya.ru/contact.html): телефон, email, мессенджеры и форма обратной связи
+- [Данные каталога в JSON](https://planeta-ladariya.ru/data/robots.json): все модели с характеристиками в машиночитаемом виде
+- [Карта сайта](https://planeta-ladariya.ru/sitemap.xml): полный список страниц с датами
+- [Паспорт сайта для ИИ-агентов](https://planeta-ladariya.ru/ai-catalog.json): что есть на сайте, в машиночитаемом виде
+
+## Гуманоидные роботы
+
+- [Unitree G1](https://planeta-ladariya.ru/robot-detail.html?id=unitree-g1): гуманоид для образования, исследований и сервисных задач, от 3 700 000 ₽
+- [Unitree H1-2](https://planeta-ladariya.ru/robot-detail.html?id=unitree-h1-2): полноразмерный гуманоид исследовательского класса для НИОКР и вузов, от 8 990 000 ₽
+- [Booster Robotics K1](https://planeta-ladariya.ru/robot-detail.html?id=booster-k1): гуманоид для промышленности и логистики, от 4 200 000 ₽
+- [Fourier GR-1](https://planeta-ladariya.ru/robot-detail.html?id=fourier-gr-1): гуманоид для реабилитационной медицины и сервисных задач, цена по запросу
+
+## Роботы-собаки
+
+- [Unitree Go2](https://planeta-ladariya.ru/robot-detail.html?id=unitree-go2): бионическая робот-собака для сервиса, охраны и образования, от 1 200 000 ₽
+- [Unitree B2](https://planeta-ladariya.ru/robot-detail.html?id=unitree-b2): промышленный четвероногий робот для инспекций и сервисной логистики, от 8 500 000 ₽
+- [Xiaomi CyberDog 2](https://planeta-ladariya.ru/robot-detail.html?id=xiaomi-cyberdog-2): компактный робот-пёс с открытым SDK, от 280 000 ₽
+
+## Сервисные роботы
+
+- [Promobot V.4](https://planeta-ladariya.ru/robot-detail.html?id=promobot-v4): робот-консультант для магазинов, банков и выставок, от 2 500 000 ₽
+- [Robovie R3](https://planeta-ladariya.ru/robot-detail.html?id=robovie-r3): робот-консьерж для гостиниц, офисов и торговых центров, от 1 800 000 ₽
+- [Pudu BellaBot](https://planeta-ladariya.ru/robot-detail.html?id=pudu-bellabot): робот-официант для ресторанов, отелей и офисов, от 807 000 ₽
+- [Keenon DinerBot T10](https://planeta-ladariya.ru/robot-detail.html?id=keenon-dinerbot-t10): доставка заказов и реклама в кафе и ресторанах, от 1 100 000 ₽
+
+## Образовательные роботы
+
+- [LEGO Education SPIKE](https://planeta-ladariya.ru/robot-detail.html?id=lego-education-spike): набор по робототехнике и программированию для школ и кружков, от 45 000 ₽
+- [LEGO Education WeDo 2.0](https://planeta-ladariya.ru/robot-detail.html?id=lego-wedo-2): робототехника для начальной школы, от 7 лет, от 50 000 ₽
+- [VEX IQ Starter Kit](https://planeta-ladariya.ru/robot-detail.html?id=vex-iq-starter): конструктор для школьников и соревнований VEX IQ Challenge, от 65 500 ₽
+
+## Логистические роботы
+
+- [ДиКом DMR 1200](https://planeta-ladariya.ru/robot-detail.html?id=dikom-dmr1200): российский автономный мобильный робот (AMR), грузоподъёмность 1200 кг, от 4 250 000 ₽
+- [Ronavi H1500](https://planeta-ladariya.ru/robot-detail.html?id=ronavi-h1500): российский логистический робот для складов, грузоподъёмность 1,5 т, цена по запросу
+
+## Статьи блога
+
+- [Топ-5 сервисных роботов для розничной торговли в 2026 году](https://planeta-ladariya.ru/blog-post.html?id=post-3): Promobot V.4, Pudu BellaBot, Keenon DinerBot T10, Unitree Go2, Robovie R3 — для чего подходит каждый
+
+## Связаться
+
+- Телефон: +7 (996) 404-95-93 (пн–пт, 9:00–20:00)
+- Email: stroitel.yug@mail.ru
+- [Telegram](https://t.me/Ladaria7529) и [ВКонтакте](https://vk.ru/it.super.jump)
+- [Форма обратной связи](https://planeta-ladariya.ru/contact.html)
