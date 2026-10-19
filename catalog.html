@@ -206,7 +206,7 @@
                         <div class="robot-tags">
                             ${robot.category ? `<span class="tag">${robot.category}</span>` : ''}
                         </div>
-                        <a href="robot-detail.html?id=${robot.id}" class="btn btn-small">Подробнее →</a>
+                        <a href="robot-${robot.slug}.html" class="btn btn-small">Подробнее →</a>
                     </div>
                 `).join('');
 
