@@ -7,26 +7,25 @@ Allow: /
 # Блокируем старые страницы интернет-магазина (404)
 Disallow: /online-store_
 
-# Блокируем служебные страницы
+# Блокируем служебные файлы и данные
 Disallow: /privacy.html
 Disallow: /oferta.html
 Disallow: /data/
 
-# Блокируем GET-параметры каталога и блога от индексации как отдельные URL
-# (после перехода на статические URL можно убрать)
+# Блокируем GET-параметры от индексации как отдельные URL
 Disallow: /catalog.html?
 Disallow: /blog.html?
 
 # Clean-param: убираем из индекса параметры, которые не меняют контент
 # UTM-метки, рекламные метки
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid&fbclid /
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid&fbclid
 
-# Параметр ?id= для старых URL роботов и блога (после полного переезда можно убрать)
+# Параметр ?id= для старых URL роботов и блога
 Clean-param: id /robot-detail.html
 Clean-param: id /blog-post.html
 
 # Путь к Sitemap
 Sitemap: https://planeta-ladariya.ru/sitemap.xml
 
-# Хост (для Яндекса, устаревшая директива, но не вредит)
+# Хост (для Яндекса)
 Host: planeta-ladariya.ru
