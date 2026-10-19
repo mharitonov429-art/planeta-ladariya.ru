@@ -180,12 +180,12 @@
                             <span class="post-date">${formatDate(post.date)}</span>
                             <span class="post-read-time">${post.readTime}</span>
                         </div>
-                        <h3><a href="blog-post.html?id=${post.id}">${post.title}</a></h3>
+                        <h3><a href="blog-${post.id}.html">${post.title}</a></h3>
                         <p class="post-excerpt">${post.excerpt}</p>
                         <div class="post-tags">
                             ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
-                        <a href="blog-post.html?id=${post.id}" class="btn btn-small">Читать →</a>
+                        <a href="blog-${post.id}.html" class="btn btn-small">Читать →</a>
                     </article>
                 `).join('');
 

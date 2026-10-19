@@ -1,20 +1,32 @@
+# Robots.txt для planeta-ladariya.ru (RoboGuide)
+# Обновлено: 19.10.2026
+
 User-agent: *
 Allow: /
 
-# ЭТАП 1.13: Служебные страницы и данные не индексируем
+# Блокируем старые страницы интернет-магазина (404)
+Disallow: /online-store_
+
+# Блокируем служебные страницы
 Disallow: /privacy.html
 Disallow: /oferta.html
 Disallow: /data/
 
-# ЭТАП 1.13: Для Яндекса — вырезаем GET-параметры (если ?id= останется в проде)
-# После перевода на статические URL эти строки можно убрать.
-Clean-param: id /robot-detail.html
-Clean-param: id /blog-post.html
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid /
-
-# ЭТАП 1.13: Закрываем будущие фильтры каталога и блога от индексации дублей
+# Блокируем GET-параметры каталога и блога от индексации как отдельные URL
+# (после перехода на статические URL можно убрать)
 Disallow: /catalog.html?
 Disallow: /blog.html?
 
+# Clean-param: убираем из индекса параметры, которые не меняют контент
+# UTM-метки, рекламные метки
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid&fbclid /
+
+# Параметр ?id= для старых URL роботов и блога (после полного переезда можно убрать)
+Clean-param: id /robot-detail.html
+Clean-param: id /blog-post.html
+
+# Путь к Sitemap
 Sitemap: https://planeta-ladariya.ru/sitemap.xml
+
+# Хост (для Яндекса, устаревшая директива, но не вредит)
 Host: planeta-ladariya.ru
