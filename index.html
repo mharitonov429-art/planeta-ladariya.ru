@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Роботы для бизнеса: официанты, консьержи, склад — RoboGuide</title>
-    <meta name="description" content="Каталог роботов для ресторанов, магазинов, складов и школ. Подбор модели под задачу, расчёт окупаемости (ROI), помощь с внедрением. 6+ моделей в наличии." />
+    <meta name="description" content="Каталог роботов для ресторанов, магазинов, складов и школ. Подбор модели под задачу, расчёт окупаемости (ROI), помощь с внедрением. 16+ моделей в наличии." />
     <link rel="canonical" href="https://planeta-ladariya.ru/" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
 
@@ -14,11 +14,11 @@
     <meta property="og:url" content="https://planeta-ladariya.ru/" />
     <meta property="og:image" content="https://planeta-ladariya.ru/images/hero-robot.jpg" />
     <meta property="og:locale" content="ru_RU" />
-
-    <!-- ✅ Подключаем CSS -->
+    <meta name="twitter:card" content="summary_large_image" />
+	
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- ✅ Шрифты (опционально) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -30,14 +30,14 @@
         <div class="container header-grid">
             <!-- Логотип -->
             <div class="logo">
-                <a href="/">
+                <a href="index.html">
                     <span class="logo-icon">🤖</span>
                     <span class="logo-text">Robo<span class="highlight">Guide</span></span>
                 </a>
             </div>
 
             <!-- Навигационное меню -->
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="#solutions">Решения</a></li>
@@ -49,7 +49,10 @@
             </nav>
 
             <!-- Кнопка для мобильной версии -->
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
+                    aria-label="Открыть меню" 
+                    aria-expanded="false" 
+                    aria-controls="mainNav">☰</button>
         </div>
     </header>
 
@@ -78,20 +81,20 @@
                         <span class="stat-label">моделей роботов</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">24</span>
-                        <span class="stat-label">реальных кейса</span>
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">отраслей</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">97%</span>
-                        <span class="stat-label">клиентов довольны</span>
+                        <span class="stat-number">&lt;1 мин</span>
+                        <span class="stat-label">расчёт ROI</span>
                     </div>
                 </div>
             </div>
             <div class="hero-image">
-                 <img src="images/hero-robot.jpg" alt="Робот-гуманоид" 
-                     style="width:100%; max-width:400px; border-radius:16px;"
-                     />
-              </div>
+                 <img src="images/hero-robot.jpg" alt="Робот-гуманоид для бизнеса" 
+                     width="400" height="400"
+                     loading="eager"
+                     style="width:100%; max-width:400px; border-radius:16px;" />
             </div>
         </div>
     </section>
@@ -115,7 +118,7 @@
                     <div class="solution-icon">🍽️</div>
                     <h3>Рестораны и отели</h3>
                     <p>Роботы-официанты, уборщики и консьержи. Снижение ФОТ до 40%.</p>
-                    <a href="catalog.html?industry=horeca" class="link-arrow">Подобрать →</a>
+                    <a href="catalog.html" class="link-arrow">Подобрать →</a>
                 </div>
 
                 <!-- Карточка 2: Ритейл -->
@@ -123,7 +126,7 @@
                     <div class="solution-icon">🛍️</div>
                     <h3>Магазины и ТЦ</h3>
                     <p>Роботы-консультанты, промоутеры, инвентаризаторы. Повышение продаж на 25%.</p>
-                    <a href="catalog.html?industry=retail" class="link-arrow">Подобрать →</a>
+                    <a href="catalog.html" class="link-arrow">Подобрать →</a>
                 </div>
 
                 <!-- Карточка 3: Образование -->
@@ -131,7 +134,7 @@
                     <div class="solution-icon">🎓</div>
                     <h3>Школы и кружки</h3>
                     <p>Образовательные наборы, программируемые платформы. Развиваем инженеров будущего.</p>
-                    <a href="catalog.html?industry=education" class="link-arrow">Подобрать →</a>
+                    <a href="catalog.html" class="link-arrow">Подобрать →</a>
                 </div>
 
                 <!-- Карточка 4: Склады и логистика -->
@@ -139,7 +142,7 @@
                     <div class="solution-icon">📦</div>
                     <h3>Склады и производство</h3>
                     <p>Логистические платформы, манипуляторы. Рост эффективности до 60%.</p>
-                    <a href="catalog.html?industry=logistics" class="link-arrow">Подобрать →</a>
+                    <a href="catalog.html" class="link-arrow">Подобрать →</a>
                 </div>
             </div>
         </div>
@@ -175,27 +178,25 @@
                     <h4>Меню</h4>
                     <ul>
                         <li><a href="catalog.html">Каталог</a></li>
+                        <li><a href="index.html#solutions">Решения</a></li>
                         <li><a href="blog.html">Блог</a></li>
                         <li><a href="about.html">О нас</a></li>
-                        <li><a href="contact.html">Контакты</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Помощь</h4>
                     <ul>
                         <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
-                        <li><a href="#">Чек-лист внедрения</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-contacts">
                     <h4>Связаться</h4>
-                    <p>📧 stroitel.yug@mail.ru</p>
-                    <p>📞 +7 (996) 404-95-93</p>
+                    <p>📧 <a href="mailto:stroitel.yug@mail.ru">stroitel.yug@mail.ru</a></p>
+                    <p>📞 <a href="tel:+79964049593">+7 (996) 404-95-93</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 RoboGuide. Все права защищены.</p>
+                <p>© <span data-footer-year>2026</span> RoboGuide. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -207,8 +208,6 @@
 
     <!-- Скрипт для подгрузки популярных роботов -->
     <script>
-        // Это временный скрипт. Данные возьмем из robots.json позже.
-        // Пока выводим заглушки.
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('popularRobots');
             if (container) {
@@ -221,7 +220,7 @@
                         <h4>Unitree G1</h4>
                         <p class="robot-price">от 3 700 000 ₽</p>
                         <p class="robot-desc">Гуманоид для образования и R&D</p>
-                       '  <a href="robot-' + robot.slug + '.html" class="btn btn-small">Подробнее</a>',
+                        <a href="robot-unitree-g1.html" class="btn btn-small">Подробнее →</a>
                     </div>
                     <div class="robot-card">
                         <div class="robot-image">
@@ -231,7 +230,7 @@
                         <h4>Unitree Go2</h4>
                         <p class="robot-price">от 1 200 000 ₽</p>
                         <p class="robot-desc">Бионическая собака для сервиса</p>
-                        '  <a href="robot-' + robot.slug + '.html" class="btn btn-small">Подробнее</a>',
+                        <a href="robot-unitree-go2.html" class="btn btn-small">Подробнее →</a>
                     </div>
                     <div class="robot-card">
                         <div class="robot-image">
@@ -241,7 +240,7 @@
                         <h4>Promobot V.4</h4>
                         <p class="robot-price">от 2 500 000 ₽</p>
                         <p class="robot-desc">Сервисный робот-консультант</p>
-                        '  <a href="robot-' + robot.slug + '.html" class="btn btn-small">Подробнее</a>',
+                        <a href="robot-promobot-v4.html" class="btn btn-small">Подробнее →</a>
                     </div>
                 `;
             }

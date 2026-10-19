@@ -9,6 +9,8 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
     <meta name="robots" content="noindex, follow" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
     <style>
         .legal-doc { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; line-height: 1.7; }
@@ -16,6 +18,8 @@
         .legal-doc h2 { margin-top: 32px; margin-bottom: 12px; font-size: 22px; }
         .legal-doc p, .legal-doc li { color: #475569; }
         .legal-doc .updated { color: #94A3B8; font-size: 14px; margin-bottom: 32px; }
+        .legal-doc a { color: #F97316; text-decoration: underline; }
+        .legal-doc a:hover { color: #EA580C; }
     </style>
 </head>
 <body>
@@ -27,7 +31,7 @@
                     <span class="logo-text">Robo<span class="highlight">Guide</span></span>
                 </a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="index.html#solutions">Решения</a></li>
@@ -37,15 +41,19 @@
                     <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
                 </ul>
             </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
+                    aria-label="Открыть меню" 
+                    aria-expanded="false" 
+                    aria-controls="mainNav">☰</button>
         </div>
     </header>
 
     <main class="legal-doc">
         <h1>Публичная оферта</h1>
-        <p class="updated">на оказание информационно-консультационных услуг по подбору и внедрению роботов</p>
+        <p class="updated">Дата публикации: 19 октября 2026 г.</p>
 
-        <p>Настоящая публичная оферта (далее — Оферта) представляет собой официальное предложение Индивидуального предпринимателя Харитоновой Татьяны Аркадьевны (ИНН 022002890620, ОГРНИП 324028000071382), именуемой в дальнейшем «Исполнитель», адресованное неограниченному кругу физических и юридических лиц, заключить договор на оказание консультационных услуг на условиях, изложенных ниже.</p>
-        <p>Текст Оферты размещён на сайте: https://planeta-ladariya.ru (далее — Сайт).</p>
+        <p>Настоящая публичная оферта (далее — Оферта) представляет собой официальное предложение самозанятого Харитонова Матвея Васильевича (ИНН 022003091813), именуемого в дальнейшем «Исполнитель», адресованное неограниченному кругу физических и юридических лиц, заключить договор на оказание консультационных услуг на условиях, изложенных ниже.</p>
+        <p>Текст Оферты размещён на сайте: <a href="https://planeta-ladariya.ru">https://planeta-ladariya.ru</a> (далее — Сайт).</p>
 
         <h2>1. Термины и определения</h2>
         <p>1.1. <strong>Услуги</strong> — информационно-консультационные услуги, оказываемые Исполнителем дистанционно: консультация по подбору робота под задачи бизнеса, расчёт окупаемости (ROI), сопровождение внедрения.</p>
@@ -81,21 +89,22 @@
 
         <h2>9. Реквизиты Исполнителя</h2>
         <p>
-            ИП Харитонова Татьяна Аркадьевна<br>
-            ИНН: 022002890620<br>
-            ОГРНИП: 324028000071382<br>
+            Самозанятый Харитонов Матвей Васильевич<br>
+            ИНН: 022003091813<br>
             Адрес: 452530, Республика Башкортостан, Дуванский район, с. Месягутово, ул. И.Усова, д. 18, кв. 1<br>
-            Телефон: +7 (996) 404-95-93<br>
-            E-mail: <a href="mailto:tanya.kharitonova.2056@mail.ru">tanya.kharitonova.2056@mail.ru</a>
+            Телефон: <a href="tel:+79964049593">+7 (996) 404-95-93</a><br>
+            E-mail: <a href="mailto:stroitel.yug@mail.ru">stroitel.yug@mail.ru</a>
         </p>
     </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="footer-bottom">
-                <p>© 2026 RoboGuide. Все права защищены.</p>
+                <p>© <span data-footer-year>2026</span> RoboGuide. Все права защищены.</p>
             </div>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

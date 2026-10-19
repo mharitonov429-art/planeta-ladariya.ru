@@ -12,9 +12,13 @@
     <meta property="og:title" content="Контакты RoboGuide" />
     <meta property="og:description" content="Телефон, email, адрес и форма связи с RoboGuide." />
     <meta property="og:url" content="https://planeta-ladariya.ru/contact.html" />
+    <meta property="og:image" content="https://planeta-ladariya.ru/images/hero-robot.jpg" />
     <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
@@ -30,7 +34,7 @@
                     <span class="logo-text">Robo<span class="highlight">Guide</span></span>
                 </a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="catalog.html">Каталог</a></li>
                     <li><a href="index.html#solutions">Решения</a></li>
@@ -40,7 +44,10 @@
                     <li><a href="contact.html" class="active">Контакты</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
+                    aria-label="Открыть меню" 
+                    aria-expanded="false" 
+                    aria-controls="mainNav">☰</button>
         </div>
     </header>
 
@@ -112,44 +119,46 @@
                     </p>
                 </div>
 
-                <form class="contact-form" id="contactForm" novalidate action="https://formsubmit.co/tanya.kharitonova.2056@mail.ru" method="POST">
+                <form class="contact-form" id="contactForm" novalidate action="https://formsubmit.co/stroitel.yug@mail.ru" method="POST">
                     <input type="hidden" name="_subject" value="Новая заявка с сайта RoboGuide">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <div class="form-row">
                         <div class="form-group">
                             <label for="contactName">Ваше имя <span class="required">*</span></label>
-                            <input type="text" id="contactName" class="form-control" placeholder="Иван Иванов" required />
+                            <input type="text" id="contactName" name="Имя" class="form-control" placeholder="Иван Иванов" required />
                             <div class="error-message" id="nameError">Пожалуйста, укажите ваше имя</div>
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email <span class="required">*</span></label>
-                            <input type="email" id="contactEmail" class="form-control" placeholder="ivan@example.ru" required />
+                            <input type="email" id="contactEmail" name="Email" class="form-control" placeholder="ivan@example.ru" required />
                             <div class="error-message" id="emailError">Пожалуйста, укажите корректный email</div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="contactPhone">Телефон</label>
-                        <input type="tel" id="contactPhone" class="form-control" placeholder="+7 (999) 123-45-67" />
+                        <input type="tel" id="contactPhone" name="Телефон" class="form-control" placeholder="+7 (999) 123-45-67" />
                     </div>
 
                     <div class="form-group">
                         <label for="contactSubject">Тема обращения <span class="required">*</span></label>
-                        <select id="contactSubject" class="form-control" required>
+                        <select id="contactSubject" name="Тема" class="form-control" required>
                             <option value="">-- Выберите тему --</option>
-                            <option value="consultation">Консультация по выбору робота</option>
-                            <option value="roi">Расчет ROI</option>
-                            <option value="partnership">Сотрудничество</option>
-                            <option value="education">Образовательные проекты</option>
-                            <option value="support">Техническая поддержка</option>
-                            <option value="other">Другое</option>
+                            <option value="Консультация по выбору робота">Консультация по выбору робота</option>
+                            <option value="Расчет ROI">Расчет ROI</option>
+                            <option value="Сотрудничество">Сотрудничество</option>
+                            <option value="Образовательные проекты">Образовательные проекты</option>
+                            <option value="Техническая поддержка">Техническая поддержка</option>
+                            <option value="Другое">Другое</option>
                         </select>
                         <div class="error-message" id="subjectError">Пожалуйста, выберите тему обращения</div>
                     </div>
 
                     <div class="form-group">
                         <label for="contactMessage">Сообщение <span class="required">*</span></label>
-                        <textarea id="contactMessage" class="form-control" rows="5" placeholder="Опишите вашу задачу или вопрос..." required></textarea>
+                        <textarea id="contactMessage" name="Сообщение" class="form-control" rows="5" placeholder="Опишите вашу задачу или вопрос..." required></textarea>
                         <div class="error-message" id="messageError">Пожалуйста, напишите сообщение</div>
                     </div>
 
@@ -191,7 +200,8 @@
                         width="100%" 
                         height="450" 
                         frameborder="0"
-                        allowfullscreen>
+                        allowfullscreen
+                        title="Карта расположения RoboGuide">
                     </iframe>
                     <p class="map-hint">452530, Республика Башкортостан,<br>Дуванский район, с. Месягутово,<br>ул. И.Усова, д. 18, кв. 1</p>
                 </div>
@@ -292,18 +302,16 @@
                     <h4>Помощь</h4>
                     <ul>
                         <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
-                        <li><a href="#">Чек-лист внедрения</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-contacts">
                     <h4>Связаться</h4>
-                    <p>📧 stroitel.yug@mail.ru</p>
-                    <p>📞 +7 (996) 404-95-93</p>
+                    <p>📧 <a href="mailto:stroitel.yug@mail.ru">stroitel.yug@mail.ru</a></p>
+                    <p>📞 <a href="tel:+79964049593">+7 (996) 404-95-93</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 RoboGuide. Все права защищены.</p>
+                <p>© <span data-footer-year>2026</span> RoboGuide. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -322,6 +330,9 @@
             const navList = document.querySelector('.nav-list');
             if (toggleBtn && navList) {
                 toggleBtn.addEventListener('click', function() {
+                    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                    toggleBtn.setAttribute('aria-expanded', !isExpanded);
+                    
                     if (navList.style.display === 'flex') {
                         navList.style.display = 'none';
                     } else {
@@ -335,6 +346,7 @@
                         navList.style.padding = '24px';
                         navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
                         navList.style.gap = '16px';
+                        navList.style.zIndex = '1000';
                     }
                 });
             }
@@ -409,8 +421,6 @@
 
             // --- Отправка формы ---
             form.addEventListener('submit', function(e) {
-                e.preventDefault();
-
                 // Проверяем все поля
                 const isNameValid = validateField(nameInput, 'nameError');
                 const isEmailValid = validateField(emailInput, 'emailError');
@@ -426,32 +436,11 @@
                     agreeInput.style.outline = 'none';
                 }
 
-                if (isNameValid && isEmailValid && isSubjectValid && isMessageValid && isAgreeValid) {
+                if (!isNameValid || !isEmailValid || !isSubjectValid || !isMessageValid || !isAgreeValid) {
+                    e.preventDefault();
+                } else {
                     submitBtn.textContent = 'Отправка...';
                     submitBtn.disabled = true;
-
-                    // Реальная отправка на email через FormSubmit
-                    const formData = new FormData(form);
-                    fetch('https://formsubmit.co/ajax/tanya.kharitonova.2056@mail.ru', {
-                        method: 'POST',
-                        headers: { 'Accept': 'application/json' },
-                        body: formData
-                    })
-                    .then(function(response) {
-                        if (!response.ok) throw new Error('Ошибка отправки');
-                        return response.json();
-                    })
-                    .then(function() {
-                        form.style.display = 'none';
-                        successMsg.style.display = 'block';
-                        submitBtn.textContent = 'Отправить сообщение →';
-                        submitBtn.disabled = false;
-                    })
-                    .catch(function() {
-                        submitBtn.textContent = 'Отправить сообщение →';
-                        submitBtn.disabled = false;
-                        alert('Не удалось отправить сообщение. Пожалуйста, напишите нам напрямую на ' + 'tanya.kharitonova.2056@mail.ru' + ' или позвоните по телефону +7 (996) 404-95-93.');
-                    });
                 }
             });
 
@@ -497,9 +486,10 @@
 
                     const data = new FormData();
                     data.append('_subject', 'Заявка на обратный звонок — RoboGuide');
+                    data.append('_captcha', 'false');
                     data.append('Телефон', phone);
 
-                    fetch('https://formsubmit.co/ajax/tanya.kharitonova.2056@mail.ru', {
+                    fetch('https://formsubmit.co/ajax/stroitel.yug@mail.ru', {
                         method: 'POST',
                         headers: { 'Accept': 'application/json' },
                         body: data

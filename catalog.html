@@ -12,15 +12,19 @@
     <meta property="og:title" content="Каталог роботов для бизнеса — RoboGuide" />
     <meta property="og:description" content="Гуманоиды, роботы-собаки, сервисные и образовательные роботы с ценами и характеристиками." />
     <meta property="og:url" content="https://planeta-ladariya.ru/catalog.html" />
+    <meta property="og:image" content="https://planeta-ladariya.ru/images/hero-robot.jpg" />
     <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
     <!-- ====================================================== -->
-    <!--  ШАПКА (копируем с index.html)                         -->
+    <!--  ШАПКА                                                -->
     <!-- ====================================================== -->
     <header class="site-header">
         <div class="container header-grid">
@@ -30,7 +34,7 @@
                     <span class="logo-text">Robo<span class="highlight">Guide</span></span>
                 </a>
             </div>
-            <nav class="main-nav">
+            <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="catalog.html" class="active">Каталог</a></li>
                     <li><a href="index.html#solutions">Решения</a></li>
@@ -40,7 +44,10 @@
                     <li><a href="contact.html" class="btn btn-outline">Контакты</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">☰</button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" 
+                    aria-label="Открыть меню" 
+                    aria-expanded="false" 
+                    aria-controls="mainNav">☰</button>
         </div>
     </header>
 
@@ -99,7 +106,7 @@
     </section>
 
     <!-- ====================================================== -->
-    <!--  ФУТЕР (копируем с index.html)                         -->
+    <!--  ФУТЕР                                                -->
     <!-- ====================================================== -->
     <footer class="site-footer">
         <div class="container">
@@ -121,18 +128,16 @@
                     <h4>Помощь</h4>
                     <ul>
                         <li><a href="roi-calculator.html">ROI-калькулятор</a></li>
-                        <li><a href="#">Чек-лист внедрения</a></li>
-                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-contacts">
                     <h4>Связаться</h4>
-                    <p>📧 stroitel.yug@mail.ru</p>
-                    <p>📞 +7 (996) 404-95-93</p>
+                    <p>📧 <a href="mailto:stroitel.yug@mail.ru">stroitel.yug@mail.ru</a></p>
+                    <p>📞 <a href="tel:+79964049593">+7 (996) 404-95-93</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2026 RoboGuide. Все права защищены.</p>
+                <p>© <span data-footer-year>2026</span> RoboGuide. Все права защищены.</p>
             </div>
         </div>
     </footer>
@@ -210,7 +215,7 @@
                     </div>
                 `).join('');
 
-                robotCount.textContent = `${robots.length} роботов`;
+                robotCount.textContent = `${robots.length} ${robots.length === 1 ? 'робот' : robots.length < 5 ? 'робота' : 'роботов'}`;
             }
 
             // --- Функция фильтрации ---
@@ -225,7 +230,7 @@
                 // Фильтр по цене
                 if (currentPrice !== 'all') {
                     filtered = filtered.filter(r => {
-                        const price = r.price ? parseInt(r.price.replace(/[^0-9]/g, '')) : 0;
+                        const price = r.priceValue || 0;
                         if (currentPrice === 'budget') return price < 1000000;
                         if (currentPrice === 'medium') return price >= 1000000 && price <= 3000000;
                         if (currentPrice === 'premium') return price > 3000000;
@@ -263,6 +268,9 @@
             const navList = document.querySelector('.nav-list');
             if (toggleBtn && navList) {
                 toggleBtn.addEventListener('click', function() {
+                    const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+                    toggleBtn.setAttribute('aria-expanded', !isExpanded);
+                    
                     if (navList.style.display === 'flex') {
                         navList.style.display = 'none';
                     } else {
@@ -276,11 +284,25 @@
                         navList.style.padding = '24px';
                         navList.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
                         navList.style.gap = '16px';
+                        navList.style.zIndex = '1000';
                     }
                 });
             }
         });
     </script>
+
+    <noscript>
+        <div style="padding: 48px 24px; text-align: center; background: #FEF3C7; border: 2px solid #F59E0B; border-radius: 12px; margin: 24px auto; max-width: 600px;">
+            <h2 style="color: #92400E; margin-bottom: 16px;">⚠️ JavaScript отключён</h2>
+            <p style="color: #78350F; font-size: 18px; margin-bottom: 24px;">
+                Для просмотра каталога роботов включите JavaScript в настройках браузера.
+            </p>
+            <p style="color: #78350F;">
+                Или свяжитесь с нами напрямую: 
+                <a href="mailto:stroitel.yug@mail.ru" style="color: #F97316; text-decoration: underline;">stroitel.yug@mail.ru</a>
+            </p>
+        </div>
+    </noscript>
 
 </body>
 </html>
