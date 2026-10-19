@@ -1,6 +1,20 @@
 User-agent: *
 Allow: /
+
+# ЭТАП 1.13: Служебные страницы и данные не индексируем
 Disallow: /privacy.html
 Disallow: /oferta.html
+Disallow: /data/
+
+# ЭТАП 1.13: Для Яндекса — вырезаем GET-параметры (если ?id= останется в проде)
+# После перевода на статические URL эти строки можно убрать.
+Clean-param: id /robot-detail.html
+Clean-param: id /blog-post.html
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&yclid&gclid /
+
+# ЭТАП 1.13: Закрываем будущие фильтры каталога и блога от индексации дублей
+Disallow: /catalog.html?
+Disallow: /blog.html?
 
 Sitemap: https://planeta-ladariya.ru/sitemap.xml
+Host: planeta-ladariya.ru
